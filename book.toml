@@ -1,0 +1,5 @@
+[book]
+authors = ["petrSchreiber"]
+multilingual = false
+src = "src"
+title = "thinBasic: user defined types"
