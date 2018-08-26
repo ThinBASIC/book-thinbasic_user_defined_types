@@ -18,3 +18,6 @@ cargo build
 ```
 
 This will put `index.html` to `book` directory. Open this file in the browser of your choice ;)
+
+## How to publish the documentation
+If you want to publish the documentation, copy the contents of the ignored `book` folder to `docs` folder.
