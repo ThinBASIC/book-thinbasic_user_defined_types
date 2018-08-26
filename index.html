@@ -1,0 +1,218 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>User defined types - thinBasic: user defined types</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">var path_to_root = "";</script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
+            if (theme === null || theme === undefined) { theme = 'light'; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <ol class="chapter"><li><a href="chapter_01-00-used-defined-types.html"><strong aria-hidden="true">1.</strong> User defined types</a></li><li><ol class="section"><li><a href="chapter_01-01-elements.html"><strong aria-hidden="true">1.1.</strong> Elements</a></li><li><a href="chapter_01-02-00-memory-representation.html"><strong aria-hidden="true">1.2.</strong> Memory representation</a></li><li><ol class="section"><li><a href="chapter_01-02-01-size.html"><strong aria-hidden="true">1.2.1.</strong> Size</a></li><li><a href="chapter_01-02-02-element-offset.html"><strong aria-hidden="true">1.2.2.</strong> Element offset</a></li><li><a href="chapter_01-02-03-element-alignment.html"><strong aria-hidden="true">1.2.3.</strong> Element packing</a></li></ol></li><li><a href="chapter_01-03-00-extending-existing-UDT.html"><strong aria-hidden="true">1.3.</strong> Extending existing UDT</a></li><li><ol class="section"><li><a href="chapter_01-03-01-extension.html"><strong aria-hidden="true">1.3.1.</strong> Extension</a></li><li><a href="chapter_01-03-02-inclusion.html"><strong aria-hidden="true">1.3.2.</strong> Inclusion</a></li></ol></li><li><a href="chapter_01-04-00-functions.html"><strong aria-hidden="true">1.4.</strong> Functions</a></li><li><ol class="section"><li><a href="chapter_01-04-01-passing-to-function.html"><strong aria-hidden="true">1.4.1.</strong> Passing to function</a></li><li><a href="chapter_01-04-02-udt-function.html"><strong aria-hidden="true">1.4.2.</strong> UDT function</a></li></ol></li></ol></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light <span class="default">(default)</span></button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">thinBasic: user defined types</h1> 
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <a class="header" href="#user-defined-types" id="user-defined-types"><h1>User defined types</h1></a>
+<p>ThinBASIC offers various elemental numeric and string data types. These are very useful in number crunching and text manipulation.</p>
+<p>Once you start describing real world objects or more complex math problems, you may feel the need to somehow group the data together into more complex structures.</p>
+<p>These structures are called <em>user defined types</em> (UDT) in thinBasic.</p>
+<a class="header" href="#syntax" id="syntax"><h2>Syntax</h2></a>
+<p>ThinBASIC uses <em>type / end type</em> block to denote <em>user defined type</em> definition.</p>
+<pre><code class="language-thinbasic">TYPE nameOfType [alignmentModifier] [EXTENDS baseType]
+  element
+  [otherElements]
+  [dataHandlingfunctions]
+END TYPE
+</code></pre>
+<a class="header" href="#example" id="example"><h2>Example</h2></a>
+<p>The definition of <em>type</em> looks complicated, but keep in mind only two parameters are mandatory:</p>
+<ul>
+<li>name of type</li>
+<li>at least one element</li>
+</ul>
+<p>To give specific example, if you want to represent a point in 2D, you could design the following UDT:</p>
+<pre><code class="language-thinbasic">TYPE Point2D
+  x AS SINGLE
+  y AS SINGLE  
+END TYPE
+</code></pre>
+<p>The name of type is <code>Point2D</code> and it has two elements - <code>x</code> and <code>y</code>, each of <code>SINGLE</code> basic data type.</p>
+<p>You can create variable of user defined type the same way as you do with conventional data types:</p>
+<pre><code class="language-thinbasic">DIM point AS Point2D
+</code></pre>
+<p>In order to write or read the data, you can use the dot notation:</p>
+<pre><code class="language-thinbasic">point.x = 1
+point.y = 2
+
+msgBox 0, strFormat$(&quot;{1}, {2}&quot;, point.x, point.y) 
+</code></pre>
+<p>Arrays of user defined types are supported as well.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
