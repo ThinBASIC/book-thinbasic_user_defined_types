@@ -14,7 +14,7 @@ cargo install mdbook
 
 Once installed, please run the following command in the repository root:
 ```
-cargo build
+mdbook build
 ```
 
 This will put `index.html` to `book` directory. Open this file in the browser of your choice ;)
