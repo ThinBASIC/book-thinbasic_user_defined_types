@@ -45,9 +45,11 @@ The main advantage of this type of definition is that the *type / end type* cont
 
 #### User defined function outside TYPE definition
 
-You can define a function for UDT outside the *type / end type* block.
+You can define the function body outside the *type / end type* block as well.
 
-The same rules apply as for any other function, except:
+In such a case, please register the function via `<functionName> AS FUNCTION` within the *type / end type* first. This registration does not increase the memory footprint of the UDT, but it creates logical link between UDT and function.
+
+UDT function defined outside the *type / end type* block follows the same rules as any other function, except:
 - having `ME` as a way to reference UDT elements
 - need to prefix the function name with name of type and dot
 
@@ -55,6 +57,9 @@ The same rules apply as for any other function, except:
 TYPE Point2D
   x AS SINGLE
   y AS SINGLE
+
+  setXY    AS FUNCTION
+  toString AS FUNCTION  
 END TYPE
 
 FUNCTION Point2D.setXY(x AS SINGLE, y AS SINGLE)
