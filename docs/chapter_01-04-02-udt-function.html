@@ -171,8 +171,9 @@ msgBox point.toString()
 </code></pre>
 <p>The main advantage of this type of definition is that the <em>type / end type</em> contains everything the UDT can do.</p>
 <a class="header" href="#user-defined-function-outside-type-definition" id="user-defined-function-outside-type-definition"><h4>User defined function outside TYPE definition</h4></a>
-<p>You can define a function for UDT outside the <em>type / end type</em> block.</p>
-<p>The same rules apply as for any other function, except:</p>
+<p>You can define the function body outside the <em>type / end type</em> block as well.</p>
+<p>In such a case, please register the function via <code>&lt;functionName&gt; AS FUNCTION</code> within the <em>type / end type</em> first. This registration does not increase the memory footprint of the UDT, but it creates logical link between UDT and function.</p>
+<p>UDT function defined outside the <em>type / end type</em> block follows the same rules as any other function, except:</p>
 <ul>
 <li>having <code>ME</code> as a way to reference UDT elements</li>
 <li>need to prefix the function name with name of type and dot</li>
@@ -180,6 +181,9 @@ msgBox point.toString()
 <pre><code class="language-thinbasic">TYPE Point2D
   x AS SINGLE
   y AS SINGLE
+
+  setXY    AS FUNCTION
+  toString AS FUNCTION  
 END TYPE
 
 FUNCTION Point2D.setXY(x AS SINGLE, y AS SINGLE)
