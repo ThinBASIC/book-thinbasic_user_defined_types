@@ -139,7 +139,7 @@
                         <a class="header" href="#elements" id="elements"><h2>Elements</h2></a>
 <p>As the previous chapter mentioned, you need to specify at least one element for user defined type.</p>
 <a class="header" href="#syntax" id="syntax"><h3>Syntax</h3></a>
-<pre><code class="language-thinbasic">[STATIC] elementName[(numberOfDimensions)] AS elementType 
+<pre><code class="language-thinbasic">[STATIC] elementName[(numberOfDimensions)] AS elementType [= value]
 </code></pre>
 <p>Element definition has two mandatory parts:</p>
 <ul>
@@ -180,6 +180,21 @@ b.x = 3 : b.y = 4
 msgBox strformat$(&quot;[{1}, {2}] is {3}&quot;, b.x, b.y, b.description)
 </code></pre>
 <p>Once you run this example, you can see that values of <code>x</code> and <code>y</code> are unique to variables <code>a</code> and <code>b</code>, however, the <code>description</code> of <code>a</code> has been promoted to <code>b</code> due to shared, static nature of the element. This connection works even in the other direction - if you change the static element in <code>b</code> now, it will be immediately reflected in <code>a</code>.</p>
+<blockquote>
+<p>Static elements are the only type of element to have the option of intialization.</p>
+</blockquote>
+<pre><code class="language-thinbasic">TYPE Point2D
+  x AS SINGLE
+  y AS SINGLE
+  
+  STATIC description AS STRING = &quot;Simple 2D Point&quot;
+END TYPE
+
+DIM p AS Point2D
+
+msgBox p.description
+</code></pre>
+<p>The example will show <em>&quot;Simple 2D Point&quot;</em> message, because the <em>p</em> variable has the member <em>description</em> initialized in <em>type / end type</em> block.</p>
 
                     </main>
 

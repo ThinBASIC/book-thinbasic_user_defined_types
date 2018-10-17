@@ -4,7 +4,7 @@ As the previous chapter mentioned, you need to specify at least one element for 
 
 ### Syntax
 ```thinbasic
-[STATIC] elementName[(numberOfDimensions)] AS elementType 
+[STATIC] elementName[(numberOfDimensions)] AS elementType [= value]
 ```
 
 Element definition has two mandatory parts:
@@ -50,3 +50,20 @@ msgBox strformat$("[{1}, {2}] is {3}", b.x, b.y, b.description)
 ```
 
 Once you run this example, you can see that values of `x` and `y` are unique to variables `a` and `b`, however, the `description` of `a` has been promoted to `b` due to shared, static nature of the element. This connection works even in the other direction - if you change the static element in `b` now, it will be immediately reflected in `a`.
+
+> Static elements are the only type of element to have the option of intialization.
+
+```thinbasic
+TYPE Point2D
+  x AS SINGLE
+  y AS SINGLE
+  
+  STATIC description AS STRING = "Simple 2D Point"
+END TYPE
+
+DIM p AS Point2D
+
+msgBox p.description
+```
+
+The example will show *"Simple 2D Point"* message, because the *p* variable has the member *description* initialized in *type / end type* block.
