@@ -1,9 +1,13 @@
 <!DOCTYPE HTML>
-<html lang="en" class="sidebar-visible no-js">
+<html lang="en" class="sidebar-visible no-js light">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
         <title>thinBasic: user defined types</title>
+        
+        <meta name="robots" content="noindex" />
+        
+
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -30,9 +34,12 @@
 
         
     </head>
-    <body class="light">
+    <body>
         <!-- Provide site root to javascript -->
-        <script type="text/javascript">var path_to_root = "";</script>
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script type="text/javascript">
@@ -53,10 +60,13 @@
         <!-- Set the theme before any content is loaded, prevents flash -->
         <script type="text/javascript">
             var theme;
-            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
-            if (theme === null || theme === undefined) { theme = 'light'; }
-            document.body.className = theme;
-            document.querySelector('html').className = theme + ' js';
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
         </script>
 
         <!-- Hide / unhide sidebar before it is displayed -->
@@ -72,7 +82,10 @@
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <ol class="chapter"><li><a href="chapter_01-00-used-defined-types.html"><strong aria-hidden="true">1.</strong> User defined types</a></li><li><ol class="section"><li><a href="chapter_01-01-elements.html"><strong aria-hidden="true">1.1.</strong> Elements</a></li><li><a href="chapter_01-02-00-memory-representation.html"><strong aria-hidden="true">1.2.</strong> Memory representation</a></li><li><ol class="section"><li><a href="chapter_01-02-01-size.html"><strong aria-hidden="true">1.2.1.</strong> Size</a></li><li><a href="chapter_01-02-02-element-offset.html"><strong aria-hidden="true">1.2.2.</strong> Element offset</a></li><li><a href="chapter_01-02-03-element-alignment.html"><strong aria-hidden="true">1.2.3.</strong> Element packing</a></li></ol></li><li><a href="chapter_01-03-00-extending-existing-UDT.html"><strong aria-hidden="true">1.3.</strong> Extending existing UDT</a></li><li><ol class="section"><li><a href="chapter_01-03-01-extension.html"><strong aria-hidden="true">1.3.1.</strong> Extension</a></li><li><a href="chapter_01-03-02-inclusion.html"><strong aria-hidden="true">1.3.2.</strong> Inclusion</a></li></ol></li><li><a href="chapter_01-04-00-functions.html"><strong aria-hidden="true">1.4.</strong> Functions</a></li><li><ol class="section"><li><a href="chapter_01-04-01-passing-to-function.html"><strong aria-hidden="true">1.4.1.</strong> Passing to function</a></li><li><a href="chapter_01-04-02-udt-function.html"><strong aria-hidden="true">1.4.2.</strong> UDT function</a></li></ol></li></ol></li></ol>
+            <div id="sidebar-scrollbox" class="sidebar-scrollbox">
+                <ol class="chapter"><li class="expanded "><a href="chapter_01-00-used-defined-types.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="expanded "><a href="chapter_01-01-elements.html"><strong aria-hidden="true">2.</strong> Elements</a></li><li><ol class="section"><li class="expanded "><a href="chapter_01-01-01-simple-elements.html"><strong aria-hidden="true">2.1.</strong> Simple elements</a></li><li class="expanded "><a href="chapter_01-01-01-fixed-array-elements.html"><strong aria-hidden="true">2.2.</strong> Fixed array elements</a></li><li class="expanded "><a href="chapter_01-01-01-dynamic-array-elements.html"><strong aria-hidden="true">2.3.</strong> Dynamic array elements</a></li><li class="expanded "><a href="chapter_01-01-01-static-elements.html"><strong aria-hidden="true">2.4.</strong> Static elements</a></li></ol></li><li class="expanded "><a href="chapter_01-02-00-memory-representation.html"><strong aria-hidden="true">3.</strong> Memory representation</a></li><li><ol class="section"><li class="expanded "><a href="chapter_01-02-01-size.html"><strong aria-hidden="true">3.1.</strong> Size</a></li><li class="expanded "><a href="chapter_01-02-02-element-offset.html"><strong aria-hidden="true">3.2.</strong> Element offset</a></li><li class="expanded "><a href="chapter_01-02-03-element-alignment.html"><strong aria-hidden="true">3.3.</strong> Element alignment</a></li></ol></li><li class="expanded "><a href="chapter_01-03-00-extending-existing-UDT.html"><strong aria-hidden="true">4.</strong> Extending existing UDT</a></li><li><ol class="section"><li class="expanded "><a href="chapter_01-03-01-extension.html"><strong aria-hidden="true">4.1.</strong> Extension</a></li><li class="expanded "><a href="chapter_01-03-02-inclusion.html"><strong aria-hidden="true">4.2.</strong> Inclusion</a></li></ol></li><li class="expanded "><a href="chapter_01-04-02-udt-function.html"><strong aria-hidden="true">5.</strong> Adding functions to UDT</a></li><li><ol class="section"><li class="expanded "><a href="chapter_01-04-02-01-udt-function-create.html"><strong aria-hidden="true">5.1.</strong> _create</a></li><li class="expanded "><a href="chapter_01-04-02-02-udt-function-destroy.html"><strong aria-hidden="true">5.2.</strong> _destroy</a></li></ol></li><li class="expanded "><a href="chapter_01-04-01-passing-to-function.html"><strong aria-hidden="true">6.</strong> Passing UDT to function</a></li><li class="expanded "><a href="appendix.html"><strong aria-hidden="true">7.</strong> Appendix</a></li><li><ol class="section"><li class="expanded "><a href="appendix-udts-and-other-languages.html"><strong aria-hidden="true">7.1.</strong> UDTs and other languages</a></li><li><ol class="section"><li class="expanded "><a href="appendix-comparative-data-types.html"><strong aria-hidden="true">7.1.1.</strong> Comparative data types</a></li><li class="expanded "><a href="appendix-impact-of-inheritance.html"><strong aria-hidden="true">7.1.2.</strong> Impact of inheritance</a></li></ol></li><li class="expanded "><a href="appendix-list-of-known-issues.html"><strong aria-hidden="true">7.2.</strong> List of known issues</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
         <div id="page-wrapper" class="page-wrapper">
@@ -89,7 +102,7 @@
                                 <i class="fa fa-paint-brush"></i>
                             </button>
                             <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                                <li role="none"><button role="menuitem" class="theme" id="light">Light <span class="default">(default)</span></button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
                                 <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
                                 <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
                                 <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
@@ -102,12 +115,13 @@
                             
                         </div>
 
-                        <h1 class="menu-title">thinBasic: user defined types</h1> 
+                        <h1 class="menu-title">thinBasic: user defined types</h1>
 
                         <div class="right-buttons">
                             <a href="print.html" title="Print this book" aria-label="Print this book">
                                 <i id="print-button" class="fa fa-print"></i>
                             </a>
+                            
                         </div>
                     </div>
                 </div>
@@ -136,11 +150,11 @@
 
                 <div id="content" class="content">
                     <main>
-                        <a class="header" href="#user-defined-types" id="user-defined-types"><h1>User defined types</h1></a>
+                        <h1><a class="header" href="#introduction" id="introduction">Introduction</a></h1>
 <p>ThinBASIC offers various elemental numeric and string data types. These are very useful in number crunching and text manipulation.</p>
-<p>Once you start describing real world objects or more complex math problems, you may feel the need to somehow group the data together into more complex structures.</p>
+<p>Once you start describing real-world objects or more complex math problems, you may feel the need to somehow group the data together into more complex structures.</p>
 <p>These structures are called <em>user defined types</em> (UDT) in thinBasic.</p>
-<a class="header" href="#syntax" id="syntax"><h2>Syntax</h2></a>
+<h2><a class="header" href="#syntax" id="syntax">Syntax</a></h2>
 <p>ThinBASIC uses <em>type / end type</em> block to denote <em>user defined type</em> definition.</p>
 <pre><code class="language-thinbasic">TYPE nameOfType [alignmentModifier] [EXTENDS baseType]
   element
@@ -148,20 +162,20 @@
   [dataHandlingfunctions]
 END TYPE
 </code></pre>
-<a class="header" href="#example" id="example"><h2>Example</h2></a>
+<h2><a class="header" href="#example" id="example">Example</a></h2>
 <p>The definition of <em>type</em> looks complicated, but keep in mind only two parameters are mandatory:</p>
 <ul>
 <li>name of type</li>
 <li>at least one element</li>
 </ul>
-<p>To give specific example, if you want to represent a point in 2D, you could design the following UDT:</p>
+<p>To give a specific example, if you want to represent a point in 2D, you could design the following UDT:</p>
 <pre><code class="language-thinbasic">TYPE Point2D
   x AS SINGLE
   y AS SINGLE  
 END TYPE
 </code></pre>
-<p>The name of type is <code>Point2D</code> and it has two elements - <code>x</code> and <code>y</code>, each of <code>SINGLE</code> basic data type.</p>
-<p>You can create variable of user defined type the same way as you do with conventional data types:</p>
+<p>The name of the type is <code>Point2D</code> and it has two elements - <code>x</code> and <code>y</code>, each of <code>SINGLE</code> basic data type.</p>
+<p>You can create a variable of user defined type the same way as you do with conventional data types:</p>
 <pre><code class="language-thinbasic">DIM point AS Point2D
 </code></pre>
 <p>In order to write or read the data, you can use the dot notation:</p>
@@ -171,17 +185,32 @@ point.y = 2
 msgBox 0, strFormat$(&quot;{1}, {2}&quot;, point.x, point.y) 
 </code></pre>
 <p>Arrays of user defined types are supported as well.</p>
-<a class="header" href="#elements" id="elements"><h2>Elements</h2></a>
+<h1><a class="header" href="#elements" id="elements">Elements</a></h1>
 <p>As the previous chapter mentioned, you need to specify at least one element for user defined type.</p>
-<a class="header" href="#syntax-1" id="syntax-1"><h3>Syntax</h3></a>
-<pre><code class="language-thinbasic">[STATIC] elementName[(numberOfDimensions)] AS elementType [= value]
+<p>There are multiple types of elements available:</p>
+<ul>
+<li><a href="chapter_01-01-01-simple-elements.html">Simple elements</a></li>
+<li><a href="chapter_01-01-01-fixed-array-elements.html">Fixed array elements</a></li>
+<li><a href="chapter_01-01-01-dynamic-array-elements.html">Dynamic array elements</a></li>
+<li><a href="chapter_01-01-01-static-elements.html">Static elements</a></li>
+</ul>
+<h2><a class="header" href="#simple-elements" id="simple-elements">Simple elements</a></h2>
+<pre><code class="language-thinbasic">elementName AS elementType 
 </code></pre>
 <p>Element definition has two mandatory parts:</p>
 <ul>
 <li><em>elementName</em>, following the same naming rules as any other variable</li>
 <li><em>elementType</em>, which can be any numeric, string or user defined type</li>
 </ul>
-<p>Element can be also an array, in such a case you specify number of items in the brackets after the <em>elementName</em>:</p>
+<p>An example of UDT with simple elements follows:</p>
+<pre><code class="language-thinbasic">TYPE Point2D
+  x AS SINGLE
+  y AS SINGLE  
+END TYPE
+</code></pre>
+<p>Each element is specified on a new line.</p>
+<h2><a class="header" href="#fixed-array-elements" id="fixed-array-elements">Fixed array elements</a></h2>
+<p>An element can be also an array, in such a case you specify its subscripts in the brackets after the <em>elementName</em>:</p>
 <pre><code class="language-thinbasic">TYPE Triangle
   point(3) AS Point2D
 END TYPE
@@ -192,11 +221,27 @@ t.point(1).x = 0 : t.point(1).y = 0
 t.point(2).x = 2 : t.point(2).y = 0
 t.point(3).x = 1 : t.point(3).y = 1
 </code></pre>
-<blockquote>
-<p><em>Note:</em> There is one exception, when array does not have to be dimensioned. See <a href="./chapter_01-03-data-handling-functions.html">Data handling functions</a> if needed.</p>
-</blockquote>
-<a class="header" href="#static-elements" id="static-elements"><h3>Static elements</h3></a>
-<p>Element can be optionally marked as <strong>static</strong>. This means, that this field is <em>shared</em> between all the variables of given type.</p>
+<p>Element arrays defined this way can have up to 3 dimensions, with the number of items in each dimension separated by comma.</p>
+<pre><code class="language-thinbasic">TYPE ConsoleScreen
+  character(80, 25) AS STRING * 1
+END TYPE
+
+DIM cs AS ConsoleScreen
+
+cs.character(1, 1) = &quot;a&quot;
+</code></pre>
+<h2><a class="header" href="#dynamic-array-elements" id="dynamic-array-elements">Dynamic array elements</a></h2>
+<p>There is one single exception when UDT array does not have to be dimensioned at all. We call such arrays <em>dynamic</em> and their usage is strictly restricted to use in conjunction with <a href="chapter_01-04-02-udt-function.html">UDT functions</a>, which can (re)dimension them before first use.</p>
+<pre><code>TYPE Polygon
+  point() AS Point2D
+
+  ...
+
+END TYPE
+</code></pre>
+<p>Dynamic array element has then just empty brackets specified, to distinguish it from a simple element.</p>
+<h2><a class="header" href="#static-elements" id="static-elements">Static elements</a></h2>
+<p>An element can be optionally marked as <strong>static</strong>. This means, that this field is <em>shared</em> between all the variables of a given type.</p>
 <pre><code class="language-thinbasic">TYPE Point2D
   x AS SINGLE
   y AS SINGLE
@@ -214,29 +259,25 @@ b.x = 3 : b.y = 4
 
 msgBox strformat$(&quot;[{1}, {2}] is {3}&quot;, b.x, b.y, b.description)
 </code></pre>
-<p>Once you run this example, you can see that values of <code>x</code> and <code>y</code> are unique to variables <code>a</code> and <code>b</code>, however, the <code>description</code> of <code>a</code> has been promoted to <code>b</code> due to shared, static nature of the element. This connection works even in the other direction - if you change the static element in <code>b</code> now, it will be immediately reflected in <code>a</code>.</p>
-<blockquote>
-<p>Static elements are the only type of element to have the option of intialization.</p>
-</blockquote>
+<p>Once you run this example, you can see that values of <code>x</code> and <code>y</code> are unique for each <code>a</code>, <code>b</code> variables.</p>
+<p>However, the <code>description</code> of <code>a</code> has been promoted to <code>b</code> due to the shared, static nature of the element.</p>
+<p>This connection works even in the other direction - if you change the static element in <code>b</code> now, it will be immediately reflected in <code>a</code>.</p>
+<p>STATIC elements are the only type of element, which can be initialized in the declaration:</p>
 <pre><code class="language-thinbasic">TYPE Point2D
   x AS SINGLE
   y AS SINGLE
   
-  STATIC description AS STRING = &quot;Simple 2D Point&quot;
+  STATIC description AS STRING = &quot;simple 2D point&quot;
 END TYPE
-
-DIM p AS Point2D
-
-msgBox p.description
 </code></pre>
-<p>The example will show <em>&quot;Simple 2D Point&quot;</em> message, because the <em>p</em> variable has the member <em>description</em> initialized in <em>type / end type</em> block.</p>
-<a class="header" href="#memory-representation" id="memory-representation"><h2>Memory representation</h2></a>
-<p>This chapter covers advanced technical topic. Continue reading, if you plan to:</p>
+<p>Non-static elements are always initialized to 0 (for numeric elements) or &quot;&quot; (for string elements).</p>
+<h1><a class="header" href="#memory-representation" id="memory-representation">Memory representation</a></h1>
+<p>This chapter covers an advanced technical topic. Continue reading, if you plan to:</p>
 <ul>
 <li>manipulate UDT variables via pointers</li>
 <li>pass UDT variables to 3rd party DLLs</li>
 </ul>
-<p>Otherwise feel free to continue to the next chapter.</p>
+<p>Otherwise, feel free to continue to the next chapter.</p>
 <p>The order in which are members declared is also reflected in the binary representation of the variable in memory.</p>
 <p>Let's demonstrate it on our exemplar UDT:</p>
 <pre><code class="language-thinbasic">TYPE Point2D
@@ -246,8 +287,8 @@ END TYPE
 </code></pre>
 <p>In this case, the element <code>x</code> is placed in memory first, and element <code>y</code> afterwards.</p>
 <p>Continue reading to explore how to determine size, element offsets and sizes in memory.</p>
-<a class="header" href="#size" id="size"><h4>Size</h4></a>
-<p>In order to determine the size of UDT in memory, alway use dedicated functions.</p>
+<h3><a class="header" href="#size" id="size">Size</a></h3>
+<p>In order to determine the size of UDT in memory, always use dedicated functions.</p>
 <p><em>SizeOf</em> will tell you how much memory is occupied by UDT. You can use it both with UDT or UDT variable:</p>
 <pre><code class="language-thinbasic">msgBox SizeOf(Point2D)
 
@@ -262,27 +303,27 @@ msgBox SizeOf(point)
                   SizeOf(point.y))
 </code></pre>
 <blockquote>
-<p>Please note the dynamic STRING always occupies 4 bytes, because it is internally represented via pointer.</p>
+<p><strong>Note:</strong> dynamic STRING always occupies 4 bytes in UDT, because it is internally represented via a pointer.</p>
 </blockquote>
-<a class="header" href="#element-offset" id="element-offset"><h4>Element offset</h4></a>
+<h3><a class="header" href="#element-offset" id="element-offset">Element offset</a></h3>
 <p>The members are stored in the memory in the order they are defined.</p>
-<p>This is very important, because it means that swapping lines of member definition will completely change the memory representation.</p>
+<p>This is very important because it means that swapping lines of member definition will completely change the memory representation.</p>
 <p>In order to find element byte offset, please use the dedicated <em>UDT_ElementOffset</em> function:</p>
 <pre><code class="language-thinbasic">msgBox strFormat$(&quot;Offset of .x is: {1} bytes, .y {2} bytes&quot;,
                   UDT_ElementOffset(point.x),
                   UDT_ElementOffset(point.y))
 </code></pre>
-<p>You can also use relevant <em>UDT_ElementByte</em> in order to find at which <em>byte</em> given element starts.</p>
-<a class="header" href="#element-alignment" id="element-alignment"><h4>Element alignment</h4></a>
-<p>By default, the elements are tightly packed in memory, one after each other.</p>
-<p>You can alter this behaviour by specifying <em>alignment modifier</em>. It can take 3 different values:</p>
+<p>You can also use relevant <em>UDT_ElementByte</em> in order to find at which <em>byte</em> given element starts. </p>
+<h3><a class="header" href="#element-alignment" id="element-alignment">Element alignment</a></h3>
+<p>By default, the elements are tightly aligned in memory, one after each other.</p>
+<p>You can alter this behaviour by specifying the <em>alignment modifier</em>. It can take 3 different values:</p>
 <ul>
 <li><em>byte</em>, for 1 byte alignment</li>
 <li><em>word</em>, for 2 byte alignment</li>
 <li><em>dword</em>, for 4 byte alignment</li>
 </ul>
-<p>The default packing is on <em>byte</em> level, so you don't really need to specify it.</p>
-<p>In case you want to pack values aligned to 4 byte steps, you might consider using DWORD modifier.</p>
+<p>The default alignment is on <em>byte</em> level, so you don't really need to specify it.</p>
+<p>In case you want to elements aligned to 4 byte steps, you might consider using <code>DWORD</code> modifier.</p>
 <p>Let's have a look at this example:</p>
 <pre><code class="language-thinbasic">TYPE RGBColor
   R AS BYTE
@@ -301,7 +342,7 @@ END TYPE
   B AS BYTE  
 END TYPE
 </code></pre>
-<p>This means that <code>R</code>, <code>G</code> and <code>B</code> elements will still be of <em>byte</em> data type, however their element offset will change to 4 byte jumps.</p>
+<p>This means that <code>R</code>, <code>G</code> and <code>B</code> elements will still be of <em>byte</em> data type, however, their element offset will change to 4 byte jumps.</p>
 <p>You can verify it easily:</p>
 <pre><code class="language-thinbasic">DIM colorNormal  AS RGBColor
 
@@ -317,8 +358,8 @@ msgbox strFormat$(&quot;The offset of .R is {1}, .G is {2} and .B is {3}&quot;,
                   UDT_ElementOffset(colorAligned.g),
                   UDT_ElementOffset(colorAligned.b))
 </code></pre>
-<a class="header" href="#extending-existing-udt" id="extending-existing-udt"><h2>Extending existing UDT</h2></a>
-<p>Once designing a new type, you don't have to start from a scratch.</p>
+<h1><a class="header" href="#extending-existing-udt" id="extending-existing-udt">Extending existing UDT</a></h1>
+<p>Once designing a new type, you don't have to start from scratch.</p>
 <p>Imagine our <code>Point2D</code> type, defined in the previous chapters.</p>
 <p>It has two members, <code>x</code> and <code>y</code>.</p>
 <pre><code class="language-thinbasic">TYPE Point2D
@@ -334,8 +375,8 @@ END TYPE
 END TYPE
 </code></pre>
 <p>The advantage of this copy-paste approach is that it is straightforward, but once you would add something to <code>Point2D</code>, it would need to be promoted to <code>Point3D</code> manually.</p>
-<p>Let's have a look at two different approaches to create new type based on existing one.</p>
-<a class="header" href="#extension" id="extension"><h3>Extension</h3></a>
+<p>Let's have a look at two different approaches creating new type based on an existing one.</p>
+<h2><a class="header" href="#extension" id="extension">Extension</a></h2>
 <p>ThinBASIC offers the <em>extends</em> keyword to create new UDT by extending existing UDT.</p>
 <p>In our case, creating <code>Point3D</code> would be as straightforward as:</p>
 <pre><code class="language-thinbasic">TYPE Point3D EXTENDS Point2D
@@ -347,13 +388,13 @@ END TYPE
 <p><strong>Note:</strong> The elements of base UDT will be placed as first in the newly created UDT</p>
 </blockquote>
 <blockquote>
-<p><strong>Note:</strong> In case you would add new element to base UDT, it will get promoted to UDT which extends it.</p>
+<p><strong>Note:</strong> In case you would add a new element to base UDT, it will get promoted to UDT which extends it.</p>
 </blockquote>
 <blockquote>
 <p><strong>Note:</strong> In case you would reorder the elements in base UDT, they will get reordered in UDT which extends it.</p>
 </blockquote>
-<a class="header" href="#inclusion" id="inclusion"><h3>Inclusion</h3></a>
-<p>Sometimes you wish to re-use the elements of existing type, but you need them at specific location.</p>
+<h2><a class="header" href="#inclusion" id="inclusion">Inclusion</a></h2>
+<p>Sometimes you wish to re-use the elements of an existing type, but you need them at a specific location.</p>
 <p>Using the <em>inclusion</em> mechanism, you can specify where will the element be included.</p>
 <p>In our case, creating <code>Point3D</code> would be as done as:</p>
 <pre><code class="language-thinbasic">TYPE Point3D
@@ -362,77 +403,25 @@ END TYPE
 END TYPE
 </code></pre>
 <p>In this case, <code>x</code> and <code>y</code> will be placed before <code>z</code> in the UDT memory.</p>
-<p>Should you need to have them after <code>z</code>, just put the included type on different place:</p>
+<p>Should you need to have them after <code>z</code>, just put the included type in different place:</p>
 <pre><code class="language-thinbasic">TYPE Point3D
   z AS SINGLE
   Point2D  
 END TYPE
 </code></pre>
 <p>Now <code>z</code> goes first, and <code>x</code> and <code>y</code> follow. </p>
-<a class="header" href="#functions" id="functions"><h2>Functions</h2></a>
-<p>User defined types can be manipulated via functions as well.</p>
-<p>There are two approaches you can choose from, or even choose together.</p>
-<p>The first one is passing one more UDTs to a function, while the second one allows defining functions directly for the UDT.</p>
-<a class="header" href="#passing-to-function" id="passing-to-function"><h3>Passing to function</h3></a>
-<p>UDT variables can be passed to any function - by value or by reference.</p>
-<p>As the UDT's represent a group of multiple other types, their memory footprint can be larger.</p>
-<p>As with all other variables, <code>byRef</code> is faster, while <code>byVal</code> ensures the value does not get altered.</p>
-<p>General rules of thumb:</p>
-<ul>
-<li>if changing the UDT variable from function is wanted or no issue, always use <code>byRef</code></li>
-<li>if you know you will not change the value in function, always use <code>byRef</code></li>
-<li>in all the other cases use <code>byVal</code>, it will ensure the UDT variable value will not change</li>
-</ul>
-<p>Little example to illustrate the difference.</p>
-<pre><code class="language-thinbasic">TYPE Point2D
-  x AS SINGLE
-  y AS SINGLE
-END TYPE
-
-DIM point AS Point2D
-</code></pre>
-<p>Here we have our <code>Point2D</code> example again.</p>
-<p>Imagine you want to change the element values via function. You can do it like:</p>
-<pre><code>Point2DSetXY(point, 1, 2)
-
-SUB Point2DSetXY(byRef point AS Point2D, x AS SINGLE, y AS SINGLE)
-  point.x = x
-  point.y = y
-END SUB
-</code></pre>
-<p>ByRef is wanted here, this function is explicitly designed to change the element values.</p>
-<p>Another example:</p>
-<pre><code class="language-thinbasic">msgBox Point2DAsString(point)
-
-FUNCTION Point2DAsString(byRef point AS Point2D) AS STRING
-  RETURN strFormat$(&quot;[{1}, {2}]&quot;, point.x, point.y)
-END FUNCTION
-</code></pre>
-<p>ByRef is safe to use here, because we use it just to make the function call faster.
-The value of <code>Point2D</code> is not altered here, just read.</p>
-<p>And last, but not least:</p>
-<pre><code class="language-thinbasic">SINGLE halfSum = Point2DGetSumOfHalfs(point)
-
-FUNCTION Point2DGetSumOfHalfs(byVal point AS Point2D) AS SINGLE
-  point.x /= 2
-  point.y /= 2
-  
-  RETURN point.x + point.y
-END FUNCTION
-</code></pre>
-<p>ByVal is needed, as you need to modify the variable for purpose of the calculation, but do not want to change the original variable.</p>
-<a class="header" href="#udt-function" id="udt-function"><h3>UDT function</h3></a>
+<h1><a class="header" href="#adding-functions-to-udt" id="adding-functions-to-udt">Adding functions to UDT</a></h1>
 <p>You can enhance the UDT with functions as well - this approach is appropriate anytime you need to perform the data manipulation of the UDT itself.</p>
 <p>Imagine our <code>Point2D</code> example - you will most probably need to initialize <code>x</code> and <code>y</code> straight away, and you will most probably need to be able to get string representation of the variable.</p>
 <p>Let's use this example to demonstrate the use of UDT functions.</p>
-<p>The first fact you should now is that UDT functions do not take the UDT variable as input explicitly.</p>
+<p>The first fact you should know is that UDT functions do not take the UDT variable as input explicitly.</p>
 <p>The data is always reachable via pre-defined <code>ME</code> variable, accessible in each UDT function.</p>
 <p>There are two kinds of UDT functions:</p>
 <ul>
 <li>user defined functions</li>
 <li>functions with special meaning, currently <code>_create</code> and <code>_destroy</code></li>
 </ul>
-<a class="header" href="#user-defined-function-within-type-definition" id="user-defined-function-within-type-definition"><h4>User defined function within TYPE definition</h4></a>
+<h2><a class="header" href="#user-defined-function-within-type-definition" id="user-defined-function-within-type-definition">User defined function within TYPE definition</a></h2>
 <p>You can define a function directly inside the <em>type / end type</em> block.</p>
 <p>The same rules apply as for any other function, except the advantage of having <code>ME</code> as a way to reference UDT elements.</p>
 <pre><code class="language-thinbasic">TYPE Point2D
@@ -455,9 +444,9 @@ point.setXY(1, 2)
 msgBox point.toString()
 </code></pre>
 <p>The main advantage of this type of definition is that the <em>type / end type</em> contains everything the UDT can do.</p>
-<a class="header" href="#user-defined-function-outside-type-definition" id="user-defined-function-outside-type-definition"><h4>User defined function outside TYPE definition</h4></a>
+<h2><a class="header" href="#user-defined-function-outside-type-definition" id="user-defined-function-outside-type-definition">User defined function outside TYPE definition</a></h2>
 <p>You can define the function body outside the <em>type / end type</em> block as well.</p>
-<p>In such a case, please register the function via <code>&lt;functionName&gt; AS FUNCTION</code> within the <em>type / end type</em> first. This registration does not increase the memory footprint of the UDT, but it creates logical link between UDT and function.</p>
+<p>In such a case, please register the function via <code>&lt;functionName&gt; AS FUNCTION</code> within the <em>type / end type</em> first. This registration does not increase the memory footprint of the UDT, but it creates a logical link between UDT and function.</p>
 <p>UDT function defined outside the <em>type / end type</em> block follows the same rules as any other function, except:</p>
 <ul>
 <li>having <code>ME</code> as a way to reference UDT elements</li>
@@ -486,13 +475,51 @@ point.setXY(1, 2)
 msgBox point.toString()
 </code></pre>
 <p>The main advantage of this type of definition is that you can spread the function across multiple source code files.</p>
-<a class="header" href="#a_create" id="a_create"><h4>_create</h4></a>
-<p>The optional <code>_create</code> function has following properties:</p>
+<h2><a class="header" href="#functions-with-special-purpose" id="functions-with-special-purpose">Functions with special purpose</a></h2>
+<p>ThinBASIC reserves the functions starting with underscore for special purpose.</p>
+<p>There are currently two such functions provided:</p>
 <ul>
-<li>is automatically called once the variable is defined</li>
-<li>it should never be called explicitly</li>
-<li>it can take parameters, which can be used for initialization</li>
+<li><a href="./chapter_01-04-02-01-udt-function-create.html">_create</a></li>
+<li><a href="./chapter_01-04-02-02-udt-function-destroy.html">_destroy</a></li>
 </ul>
+<h3><a class="header" href="#_create" id="_create">_create</a></h3>
+<p>The optional <code>_create</code> function can be used for variable initialization.</p>
+<p>The behaviour slightly differs depending on whether the function has parameters or not.</p>
+<blockquote>
+<p><strong>Note:</strong> This function <em>cannot</em> be called explicitly by name, it is used automatically.</p>
+</blockquote>
+<h4><a class="header" href="#without-parameters" id="without-parameters">Without parameters</a></h4>
+<p>The simplest form of <code>_create</code> does not take any parameters.</p>
+<p>Such function is called automatically in case of:</p>
+<ul>
+<li>declaration of a scalar variable of a given type</li>
+</ul>
+<p>The typical use of <code>_create</code> without parameters is an assignment of the default element values:</p>
+<pre><code class="language-thinbasic">TYPE PacMan
+    R AS BYTE
+    G AS BYTE
+    B AS BYTE
+
+    ' As we all now, PacMan is yellow by default :P
+    FUNCTION _create()
+        me.R = 255
+        me.G = 255
+        me.B = 0
+    END FUNCTION
+END TYPE
+
+DIM player1 AS PacMan   ' player1 is yellow by default
+
+DIM player2 AS PacMan   ' player2 is created yellow by default
+player2.R = 0           ' ...but changed to green thanks to override below
+player2.G = 255
+player2.B = 0
+</code></pre>
+<blockquote>
+<p><strong>Note:</strong> Should you create an array of given type, <code>_create</code> is not called at the moment.</p>
+</blockquote>
+<h4><a class="header" href="#with-parameters" id="with-parameters">With parameters</a></h4>
+<p>The advanced form of <code>_create</code> allows us advanced initialization.</p>
 <p>For our case of <code>Point2D</code> it allows us to set <code>x</code> and <code>y</code> during the variable creation.</p>
 <pre><code class="language-thinbasic">TYPE Point2D
   x AS SINGLE
@@ -507,19 +534,22 @@ END TYPE
 DIM point AS Point2D(1, 2)
 </code></pre>
 <p>Now <code>x</code> contains <code>1</code> and <code>y</code> is equal to <code>2</code>.</p>
-<p>As you can see, the <code>_create</code> function is not explicitely called, but any parameters passed to your UDT upon creation are passed to <code>_create</code> automatically.</p>
+<p>As you can see, the <code>_create</code> function is not explicitly called, but any parameters passed to your UDT upon creation are passed to <code>_create</code> automatically.</p>
 <p>Without <code>_create</code>, you would need to initialize the variable the hard way:</p>
 <pre><code>DIM point AS Point2D
 point.x = 1
 point.y = 2
 </code></pre>
-<a class="header" href="#a_destroy" id="a_destroy"><h4>_destroy</h4></a>
+<blockquote>
+<p><strong>Note:</strong> It is still possible to declare <code>Point2D</code> as <code>DIM point AS Point2D</code>, without any parameters. In such a case <code>_create</code> is not called and <code>x</code> and <code>y</code> will both have a value of zero.</p>
+</blockquote>
+<h3><a class="header" href="#_destroy" id="_destroy">_destroy</a></h3>
 <p>The optional <code>_destroy</code> function has two basic properties:</p>
 <ul>
 <li>is automatically called once the variable goes out of scope</li>
-<li>it does not take any parameters</li>
+<li>it does not take any parameters </li>
 </ul>
-<p>Defining it in context of <code>Point2D</code> has no meaning, but we can use it to illustrate how it works:</p>
+<p>Defining it in the context of <code>Point2D</code> has no meaning, but we can use it to illustrate how it works:</p>
 <pre><code>TYPE Point2D
   x AS SINGLE
   y AS SINGLE
@@ -545,6 +575,256 @@ FUNCTION MyFunction()
   DIM p AS Point2D(1, 2)
 END FUNCTION
 </code></pre>
+<h1><a class="header" href="#passing-udt-to-function" id="passing-udt-to-function">Passing UDT to function</a></h1>
+<p>UDT variables can be passed to any function - by value or by reference.</p>
+<p>As the UDT's represent a group of multiple other types, their memory footprint can be larger.</p>
+<p>As with all other variables, <code>byRef</code> is faster, while <code>byVal</code> ensures the value does not get altered.</p>
+<p>General rules of thumb:</p>
+<ul>
+<li>if changing the UDT variable from function is wanted or no issue, always use <code>byRef</code></li>
+<li>if you know you will not change the value in function, always use <code>byRef</code> </li>
+<li>in all the other cases use <code>byVal</code>, it will ensure the UDT variable value will not change</li>
+</ul>
+<p>Little example to illustrate the difference.</p>
+<pre><code class="language-thinbasic">TYPE Point2D
+  x AS SINGLE
+  y AS SINGLE
+END TYPE
+
+DIM point AS Point2D
+</code></pre>
+<p>Here we have our <code>Point2D</code> example again.</p>
+<p>Imagine you want to change the element values via function. You can do it like:</p>
+<pre><code>Point2DSetXY(point, 1, 2)
+
+SUB Point2DSetXY(byRef point AS Point2D, x AS SINGLE, y AS SINGLE)
+  point.x = x
+  point.y = y
+END SUB
+</code></pre>
+<p><code>ByRef</code> is wanted here, this function is explicitly designed to change the element values.</p>
+<p>Another example:</p>
+<pre><code class="language-thinbasic">msgBox Point2DAsString(point)
+
+FUNCTION Point2DAsString(byRef point AS Point2D) AS STRING
+  RETURN strFormat$(&quot;[{1}, {2}]&quot;, point.x, point.y)
+END FUNCTION
+</code></pre>
+<p>ByRef is safe to use here, because we use it just to make the function call faster.
+The value of <code>Point2D</code> is not altered here, just read.</p>
+<p>And last, but not least:</p>
+<pre><code class="language-thinbasic">SINGLE halfSum = Point2DGetSumOfHalfs(point)
+
+FUNCTION Point2DGetSumOfHalfs(byVal point AS Point2D) AS SINGLE
+  point.x /= 2
+  point.y /= 2
+  
+  RETURN point.x + point.y
+END FUNCTION
+</code></pre>
+<p><code>ByVal</code> is needed, as you need to modify the variable for purpose of the calculation, but do not want to change the original variable.</p>
+<h1><a class="header" href="#appendix" id="appendix">Appendix</a></h1>
+<p>Additional information on UDT.</p>
+<h2><a class="header" href="#udts-and-other-languages" id="udts-and-other-languages">UDTs and other languages</a></h2>
+<p>It is possible to use your UDTs with other languages, but you need to be careful.</p>
+<p>In vast majority of cases, you will need to duplicate the UDT definition in given language.</p>
+<p>UDT <a href="chapter_01-02-00-memory-representation.html">memory representation</a> always contains just the elements, and that is what you can pass to 3rd party DLL.</p>
+<blockquote>
+<p><strong>Note:</strong> thinBASIC specifics, such as UDT FUNCTIONs or default values cannot be transfered.</p>
+</blockquote>
+<h3><a class="header" href="#comparative-data-types" id="comparative-data-types">Comparative data types</a></h3>
+<p>ThinBASIC uses BASIC convention for data type naming, which is incompatible with most non-BASIC languages.</p>
+<p>The following table will help you with matching the correct thinBASIC type with the correct type in the targetted language:</p>
+<table>
+    <tr><th>Data type</th><th>Meaning</th></tr>
+    <tr><td>INTEGER</td><td>16 bit signed integer</td></tr>
+    <tr><td>LONG</td><td>32 bit signed integer</td></tr>
+    <tr><td>QUAD</td><td>64 bit signed integer</td></tr>    
+    <tr><td>BYTE</td><td>8 bit unsigned integer</td></tr>
+    <tr><td>WORD</td><td>16 bit unsigned integer</td></tr>
+    <tr><td>DWORD</td><td>32 bit unsigned integer</td></tr>
+    <tr><td>SINGLE</td><td>32 bit floating point</td></tr>
+    <tr><td>DOUBLE</td><td>64 bit floating point</td></tr>
+    <tr><td>EXTENDED</td><td>80 bit floating point</td></tr>
+    <tr><td>NUMBER</td><td>80 bit floating point</td></tr>
+    <tr><td>STRING</td><td>BSTR</td></tr>
+    <tr><td>ASCIIZ</td><td>Null-terminated buffer of characters</td></tr>
+</table>
+<p>With this knowledge, you may translate thinBASIC UDT:</p>
+<pre><code>TYPE Point2D
+  x AS SINGLE
+  y AS SINGLE
+END TYPE
+</code></pre>
+<p>...as the following in C:</p>
+<pre><code class="language-c">struct Point2D {
+  float x;
+  float y;
+};
+</code></pre>
+<p>...as the following in Rust:</p>
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+fn main() {
+</span>struct Point2D {
+  pub x: f32,
+  pub y: f32,
+}
+<span class="boring">}
+</code></pre></pre>
+<h3><a class="header" href="#impact-of-inheritance" id="impact-of-inheritance">Impact of inheritance</a></h3>
+<p>You need to keep in mind that many low level languages do not offer UDT inheritance equivalent.</p>
+<p>In such case, you need to &quot;flatten&quot; the UDT to its final form:</p>
+<p>With this knowledge, you may translate thinBASIC <code>Point3D</code> this way:</p>
+<pre><code>TYPE Point2D
+  x AS SINGLE
+  y AS SINGLE
+END TYPE
+
+TYPE Point3D EXTENDS Point2D
+  z AS SINGLE
+END TYPE
+</code></pre>
+<p>...as the following in C:</p>
+<pre><code class="language-c">struct Point3D {
+  float x;
+  float y;
+  float z;
+};
+</code></pre>
+<p>...as the following in Rust:</p>
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+fn main() {
+</span>struct Point2D {
+  pub x: f32,
+  pub y: f32,
+  pub z: f32,
+}
+<span class="boring">}
+</code></pre></pre>
+<h1><a class="header" href="#list-of-known-issues" id="list-of-known-issues">List of known issues</a></h1>
+<p>As thinBASIC formal checking is currently under careful research, it might be useful for you to know about the current limitations of the language, which might otherwise confuse you.</p>
+<h2><a class="header" href="#swap" id="swap">SWAP</a></h2>
+<p>This useful command for swapping variable content is silently accepting UDT variable or member as a parameter, but it does not perform any action.</p>
+<blockquote>
+<p><strong>DANGER:</strong> - missing functionality silently ignored, <a href="https://www.thinbasic.com/community/project.php?issueid=564">reported</a></p>
+</blockquote>
+<h2><a class="header" href="#direct-assignment" id="direct-assignment">Direct assignment</a></h2>
+<p>While this is not an issue, it is good to know about how does this work.</p>
+<p>When you perform the assignment of one UDT variable to another UDT variable, a copy of data is performed.</p>
+<pre><code class="language-thinbasic">TYPE Point2D
+  x AS SINGLE
+  y AS SINGLE
+END TYPE
+
+dim a as Point2D
+a.x = 1
+
+dim b as Point2D
+b.x = 2
+
+a = b
+
+MSGBOX 0, a.x
+MSGBOX 0, b.x
+</code></pre>
+<p>Please note thinBASIC currently allows you to assign two totally different types, as it performs a memory copy.</p>
+<pre><code class="language-thinbasic">TYPE Point2D
+  x AS SINGLE
+  y AS SINGLE
+END TYPE
+
+TYPE Point3D
+  x AS SINGLE
+  y AS SINGLE
+  z AS SINGLE
+END TYPE
+
+dim a as Point2D
+a.x = 1
+
+dim b as Point3D
+b.x = 2
+
+a = b
+
+MSGBOX 0, a.x
+MSGBOX 0, b.x
+</code></pre>
+<blockquote>
+<p><strong>DANGER:</strong> - allows you to miss the accidental assignment of incompatible data types.</p>
+</blockquote>
+<h2><a class="header" href="#arrays-in-udt" id="arrays-in-udt">Arrays in UDT</a></h2>
+<p>The following functions do not work with UDT arrays yet:</p>
+<ul>
+<li><code>ARRAY ASSIGN</code>, <a href="https://www.thinbasic.com/community/project.php?issueid=565">reported</a></li>
+<li><code>ARRAY EXTRACT</code>, <a href="https://www.thinbasic.com/community/project.php?issueid=566">reported</a></li>
+<li><code>ARRAY FILL</code>, <a href="https://www.thinbasic.com/community/project.php?issueid=567">reported</a></li>
+<li><code>ARRAY SCAN</code>, <a href="https://www.thinbasic.com/community/project.php?issueid=568">reported</a></li>
+<li><code>ARRAY SORT</code>, <a href="https://www.thinbasic.com/community/project.php?issueid=569">reported</a></li>
+<li><code>ARRAY SUM</code>, <a href="https://www.thinbasic.com/community/project.php?issueid=570">reported</a></li>
+<li><code>ARRAY SHIFT</code>, <a href="https://www.thinbasic.com/community/project.php?issueid=571">reported</a></li>
+<li><code>ARRAY SHUFFLE</code>, <a href="https://www.thinbasic.com/community/project.php?issueid=572">reported</a></li>
+<li><code>ARRAY UNIQUE</code>, <a href="https://www.thinbasic.com/community/project.php?issueid=573">reported</a></li>
+<li><code>JOIN$</code>, <a href="https://www.thinbasic.com/community/project.php?issueid=575">reported</a></li>
+</ul>
+<p>You can <strong>workaround</strong> these limitations by overlaying virtual array over the UDT array.</p>
+<p>Example:</p>
+<pre><code class="language-thinbasic">TYPE MyType
+  myArray() as int32
+  
+  function _Create()
+    redim me.myArray(3)
+    me.myArray(1) = 1, 2, 3
+    
+    ' This overlays local array over ME array,
+    ' making ME.myArray data available for read/write
+    int32 virtualMyArray(3) at varptr(me.myArray(1))
+    
+    int32 index = array scan virtualMyArray(), = 3
+    
+    msgbox 0, index
+    
+  end function
+END TYPE
+
+dim v as MyType
+</code></pre>
+<ul>
+<li><code>COUNTOF</code> does not work, <a href="https://www.thinbasic.com/community/project.php?issueid=576">reported</a>
+<ul>
+<li>you can workaround by using UBOUND instead</li>
+</ul>
+</li>
+</ul>
+<h2><a class="header" href="#multidimensional-dynamic-arrays-in-udt" id="multidimensional-dynamic-arrays-in-udt">Multidimensional dynamic arrays in UDT</a></h2>
+<p>While static multidimensional arrays in UDT are fully supported with up to 3 dimensions, the dynamic UDT arrays currently work only with a single dimension.</p>
+<p>If you dimension dynamic UDT array with more than 1 dimension, it will silently continue, but the indexing will not work correctly.</p>
+<blockquote>
+<p><strong>DANGER:</strong> - missing functionality silently ignored, <a href="https://www.thinbasic.com/community/project.php?issueid=563">reported</a></p>
+</blockquote>
+<p>You can <strong>workaround</strong> this limitation by overlaying virtual array over the UDT array.</p>
+<p>Example:</p>
+<pre><code class="language-thinbasic">TYPE MyType
+  myArray() as int32
+  
+  function _Create()
+    redim me.myArray(3 * 2)                             ' -- Linear dimensioning
+    
+    int32 virtualMyArray(3, 2) at varptr(me.myArray(1)) ' -- Multidimensioning
+    
+    virtualMyArray(3, 1) = 1    ' Performs write to UDT data thanks to overlay
+    virtualMyArray(1, 3) = 2    ' Performs write to UDT data thanks to overlay
+    
+    msgbox 0, virtualMyArray(3, 1)
+    msgbox 0, virtualMyArray(1, 3)    
+    
+  end function
+END TYPE
+
+dim v as MyType
+</code></pre>
 
                     </main>
 
@@ -569,6 +849,14 @@ END FUNCTION
 
         
 
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
         
 
         

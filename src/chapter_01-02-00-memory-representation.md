@@ -1,10 +1,10 @@
-## Memory representation
+# Memory representation
 
-This chapter covers advanced technical topic. Continue reading, if you plan to:
+This chapter covers an advanced technical topic. Continue reading, if you plan to:
 - manipulate UDT variables via pointers
 - pass UDT variables to 3rd party DLLs
 
-Otherwise feel free to continue to the next chapter.
+Otherwise, feel free to continue to the next chapter.
 
 The order in which are members declared is also reflected in the binary representation of the variable in memory.
 
