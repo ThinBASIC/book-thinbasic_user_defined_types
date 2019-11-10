@@ -2,8 +2,6 @@
 
 This is a documentation of thinBasic user defined types, aiming to cover the complete functionality.
 
-*Currently under development*
-
 ## How to view the documentation
 You may browse the MD files alone, but the recommended approach is to build the docs via `mdbook`.
 

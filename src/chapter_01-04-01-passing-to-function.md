@@ -1,4 +1,4 @@
-### Passing to function
+# Passing UDT to function
 
 UDT variables can be passed to any function - by value or by reference.
 
@@ -33,7 +33,7 @@ SUB Point2DSetXY(byRef point AS Point2D, x AS SINGLE, y AS SINGLE)
 END SUB
 ```
 
-ByRef is wanted here, this function is explicitly designed to change the element values.
+`ByRef` is wanted here, this function is explicitly designed to change the element values.
 
 Another example:
 ```thinbasic
@@ -59,4 +59,4 @@ FUNCTION Point2DGetSumOfHalfs(byVal point AS Point2D) AS SINGLE
 END FUNCTION
 ```
 
-ByVal is needed, as you need to modify the variable for purpose of the calculation, but do not want to change the original variable.
+`ByVal` is needed, as you need to modify the variable for purpose of the calculation, but do not want to change the original variable.

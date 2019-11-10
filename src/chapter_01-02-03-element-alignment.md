@@ -1,15 +1,15 @@
-#### Element alignment
+### Element alignment
 
-By default, the elements are tightly packed in memory, one after each other.
+By default, the elements are tightly aligned in memory, one after each other.
 
-You can alter this behaviour by specifying *alignment modifier*. It can take 3 different values:
+You can alter this behaviour by specifying the *alignment modifier*. It can take 3 different values:
 - *byte*, for 1 byte alignment
 - *word*, for 2 byte alignment
 - *dword*, for 4 byte alignment
 
-The default packing is on *byte* level, so you don't really need to specify it.
+The default alignment is on *byte* level, so you don't really need to specify it.
 
-In case you want to pack values aligned to 4 byte steps, you might consider using DWORD modifier.
+In case you want to elements aligned to 4 byte steps, you might consider using `DWORD` modifier.
 
 Let's have a look at this example:
 ```thinbasic
@@ -36,7 +36,7 @@ TYPE DwordAlignedRGBColor DWORD
 END TYPE
 ```
 
-This means that `R`, `G` and `B` elements will still be of *byte* data type, however their element offset will change to 4 byte jumps.
+This means that `R`, `G` and `B` elements will still be of *byte* data type, however, their element offset will change to 4 byte jumps.
 
 You can verify it easily:
 ```thinbasic

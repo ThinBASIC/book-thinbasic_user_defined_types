@@ -1,5 +1,5 @@
-#### Size
-In order to determine the size of UDT in memory, alway use dedicated functions.
+### Size
+In order to determine the size of UDT in memory, always use dedicated functions.
 
 *SizeOf* will tell you how much memory is occupied by UDT. You can use it both with UDT or UDT variable:
 ```thinbasic
@@ -19,4 +19,4 @@ msgBox strFormat$("Size of .x is: {1} bytes, .y {2} bytes",
                   SizeOf(point.y))
 ```
 
-> Please note the dynamic STRING always occupies 4 bytes, because it is internally represented via pointer.
+> **Note:** dynamic STRING always occupies 4 bytes in UDT, because it is internally represented via a pointer.

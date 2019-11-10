@@ -1,8 +1,8 @@
-#### Element offset
+### Element offset
 
 The members are stored in the memory in the order they are defined.
 
-This is very important, because it means that swapping lines of member definition will completely change the memory representation.
+This is very important because it means that swapping lines of member definition will completely change the memory representation.
 
 In order to find element byte offset, please use the dedicated *UDT_ElementOffset* function:
 ```thinbasic

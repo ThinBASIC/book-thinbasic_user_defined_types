@@ -1,6 +1,6 @@
-## Extending existing UDT
+# Extending existing UDT
 
-Once designing a new type, you don't have to start from a scratch.
+Once designing a new type, you don't have to start from scratch.
 
 Imagine our `Point2D` type, defined in the previous chapters.
 
@@ -23,4 +23,4 @@ END TYPE
 
 The advantage of this copy-paste approach is that it is straightforward, but once you would add something to `Point2D`, it would need to be promoted to `Point3D` manually.
 
-Let's have a look at two different approaches to create new type based on existing one.
+Let's have a look at two different approaches creating new type based on an existing one.

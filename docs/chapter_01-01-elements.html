@@ -1,9 +1,11 @@
 <!DOCTYPE HTML>
-<html lang="en" class="sidebar-visible no-js">
+<html lang="en" class="sidebar-visible no-js light">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
         <title>Elements - thinBasic: user defined types</title>
+        
+
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -30,9 +32,12 @@
 
         
     </head>
-    <body class="light">
+    <body>
         <!-- Provide site root to javascript -->
-        <script type="text/javascript">var path_to_root = "";</script>
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script type="text/javascript">
@@ -53,10 +58,13 @@
         <!-- Set the theme before any content is loaded, prevents flash -->
         <script type="text/javascript">
             var theme;
-            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
-            if (theme === null || theme === undefined) { theme = 'light'; }
-            document.body.className = theme;
-            document.querySelector('html').className = theme + ' js';
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
         </script>
 
         <!-- Hide / unhide sidebar before it is displayed -->
@@ -72,7 +80,10 @@
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <ol class="chapter"><li><a href="chapter_01-00-used-defined-types.html"><strong aria-hidden="true">1.</strong> User defined types</a></li><li><ol class="section"><li><a href="chapter_01-01-elements.html" class="active"><strong aria-hidden="true">1.1.</strong> Elements</a></li><li><a href="chapter_01-02-00-memory-representation.html"><strong aria-hidden="true">1.2.</strong> Memory representation</a></li><li><ol class="section"><li><a href="chapter_01-02-01-size.html"><strong aria-hidden="true">1.2.1.</strong> Size</a></li><li><a href="chapter_01-02-02-element-offset.html"><strong aria-hidden="true">1.2.2.</strong> Element offset</a></li><li><a href="chapter_01-02-03-element-alignment.html"><strong aria-hidden="true">1.2.3.</strong> Element packing</a></li></ol></li><li><a href="chapter_01-03-00-extending-existing-UDT.html"><strong aria-hidden="true">1.3.</strong> Extending existing UDT</a></li><li><ol class="section"><li><a href="chapter_01-03-01-extension.html"><strong aria-hidden="true">1.3.1.</strong> Extension</a></li><li><a href="chapter_01-03-02-inclusion.html"><strong aria-hidden="true">1.3.2.</strong> Inclusion</a></li></ol></li><li><a href="chapter_01-04-00-functions.html"><strong aria-hidden="true">1.4.</strong> Functions</a></li><li><ol class="section"><li><a href="chapter_01-04-01-passing-to-function.html"><strong aria-hidden="true">1.4.1.</strong> Passing to function</a></li><li><a href="chapter_01-04-02-udt-function.html"><strong aria-hidden="true">1.4.2.</strong> UDT function</a></li></ol></li></ol></li></ol>
+            <div id="sidebar-scrollbox" class="sidebar-scrollbox">
+                <ol class="chapter"><li class="expanded "><a href="chapter_01-00-used-defined-types.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="expanded "><a href="chapter_01-01-elements.html" class="active"><strong aria-hidden="true">2.</strong> Elements</a></li><li><ol class="section"><li class="expanded "><a href="chapter_01-01-01-simple-elements.html"><strong aria-hidden="true">2.1.</strong> Simple elements</a></li><li class="expanded "><a href="chapter_01-01-01-fixed-array-elements.html"><strong aria-hidden="true">2.2.</strong> Fixed array elements</a></li><li class="expanded "><a href="chapter_01-01-01-dynamic-array-elements.html"><strong aria-hidden="true">2.3.</strong> Dynamic array elements</a></li><li class="expanded "><a href="chapter_01-01-01-static-elements.html"><strong aria-hidden="true">2.4.</strong> Static elements</a></li></ol></li><li class="expanded "><a href="chapter_01-02-00-memory-representation.html"><strong aria-hidden="true">3.</strong> Memory representation</a></li><li><ol class="section"><li class="expanded "><a href="chapter_01-02-01-size.html"><strong aria-hidden="true">3.1.</strong> Size</a></li><li class="expanded "><a href="chapter_01-02-02-element-offset.html"><strong aria-hidden="true">3.2.</strong> Element offset</a></li><li class="expanded "><a href="chapter_01-02-03-element-alignment.html"><strong aria-hidden="true">3.3.</strong> Element alignment</a></li></ol></li><li class="expanded "><a href="chapter_01-03-00-extending-existing-UDT.html"><strong aria-hidden="true">4.</strong> Extending existing UDT</a></li><li><ol class="section"><li class="expanded "><a href="chapter_01-03-01-extension.html"><strong aria-hidden="true">4.1.</strong> Extension</a></li><li class="expanded "><a href="chapter_01-03-02-inclusion.html"><strong aria-hidden="true">4.2.</strong> Inclusion</a></li></ol></li><li class="expanded "><a href="chapter_01-04-02-udt-function.html"><strong aria-hidden="true">5.</strong> Adding functions to UDT</a></li><li><ol class="section"><li class="expanded "><a href="chapter_01-04-02-01-udt-function-create.html"><strong aria-hidden="true">5.1.</strong> _create</a></li><li class="expanded "><a href="chapter_01-04-02-02-udt-function-destroy.html"><strong aria-hidden="true">5.2.</strong> _destroy</a></li></ol></li><li class="expanded "><a href="chapter_01-04-01-passing-to-function.html"><strong aria-hidden="true">6.</strong> Passing UDT to function</a></li><li class="expanded "><a href="appendix.html"><strong aria-hidden="true">7.</strong> Appendix</a></li><li><ol class="section"><li class="expanded "><a href="appendix-udts-and-other-languages.html"><strong aria-hidden="true">7.1.</strong> UDTs and other languages</a></li><li><ol class="section"><li class="expanded "><a href="appendix-comparative-data-types.html"><strong aria-hidden="true">7.1.1.</strong> Comparative data types</a></li><li class="expanded "><a href="appendix-impact-of-inheritance.html"><strong aria-hidden="true">7.1.2.</strong> Impact of inheritance</a></li></ol></li><li class="expanded "><a href="appendix-list-of-known-issues.html"><strong aria-hidden="true">7.2.</strong> List of known issues</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
         <div id="page-wrapper" class="page-wrapper">
@@ -89,7 +100,7 @@
                                 <i class="fa fa-paint-brush"></i>
                             </button>
                             <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                                <li role="none"><button role="menuitem" class="theme" id="light">Light <span class="default">(default)</span></button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
                                 <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
                                 <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
                                 <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
@@ -102,12 +113,13 @@
                             
                         </div>
 
-                        <h1 class="menu-title">thinBasic: user defined types</h1> 
+                        <h1 class="menu-title">thinBasic: user defined types</h1>
 
                         <div class="right-buttons">
                             <a href="print.html" title="Print this book" aria-label="Print this book">
                                 <i id="print-button" class="fa fa-print"></i>
                             </a>
+                            
                         </div>
                     </div>
                 </div>
@@ -136,65 +148,15 @@
 
                 <div id="content" class="content">
                     <main>
-                        <a class="header" href="#elements" id="elements"><h2>Elements</h2></a>
+                        <h1><a class="header" href="#elements" id="elements">Elements</a></h1>
 <p>As the previous chapter mentioned, you need to specify at least one element for user defined type.</p>
-<a class="header" href="#syntax" id="syntax"><h3>Syntax</h3></a>
-<pre><code class="language-thinbasic">[STATIC] elementName[(numberOfDimensions)] AS elementType [= value]
-</code></pre>
-<p>Element definition has two mandatory parts:</p>
+<p>There are multiple types of elements available:</p>
 <ul>
-<li><em>elementName</em>, following the same naming rules as any other variable</li>
-<li><em>elementType</em>, which can be any numeric, string or user defined type</li>
+<li><a href="chapter_01-01-01-simple-elements.html">Simple elements</a></li>
+<li><a href="chapter_01-01-01-fixed-array-elements.html">Fixed array elements</a></li>
+<li><a href="chapter_01-01-01-dynamic-array-elements.html">Dynamic array elements</a></li>
+<li><a href="chapter_01-01-01-static-elements.html">Static elements</a></li>
 </ul>
-<p>Element can be also an array, in such a case you specify number of items in the brackets after the <em>elementName</em>:</p>
-<pre><code class="language-thinbasic">TYPE Triangle
-  point(3) AS Point2D
-END TYPE
-
-DIM t AS Triangle
-
-t.point(1).x = 0 : t.point(1).y = 0
-t.point(2).x = 2 : t.point(2).y = 0
-t.point(3).x = 1 : t.point(3).y = 1
-</code></pre>
-<blockquote>
-<p><em>Note:</em> There is one exception, when array does not have to be dimensioned. See <a href="./chapter_01-03-data-handling-functions.html">Data handling functions</a> if needed.</p>
-</blockquote>
-<a class="header" href="#static-elements" id="static-elements"><h3>Static elements</h3></a>
-<p>Element can be optionally marked as <strong>static</strong>. This means, that this field is <em>shared</em> between all the variables of given type.</p>
-<pre><code class="language-thinbasic">TYPE Point2D
-  x AS SINGLE
-  y AS SINGLE
-  
-  STATIC description AS STRING
-END TYPE
-
-DIM a AS Point2D
-a.x = 1 : a.y = 2
-a.description = &quot;simple 2D point&quot;
-msgBox strformat$(&quot;[{1}, {2}] is {3}&quot;, a.x, a.y, a.description)
-
-DIM b AS Point2D
-b.x = 3 : b.y = 4
-
-msgBox strformat$(&quot;[{1}, {2}] is {3}&quot;, b.x, b.y, b.description)
-</code></pre>
-<p>Once you run this example, you can see that values of <code>x</code> and <code>y</code> are unique to variables <code>a</code> and <code>b</code>, however, the <code>description</code> of <code>a</code> has been promoted to <code>b</code> due to shared, static nature of the element. This connection works even in the other direction - if you change the static element in <code>b</code> now, it will be immediately reflected in <code>a</code>.</p>
-<blockquote>
-<p>Static elements are the only type of element to have the option of intialization.</p>
-</blockquote>
-<pre><code class="language-thinbasic">TYPE Point2D
-  x AS SINGLE
-  y AS SINGLE
-  
-  STATIC description AS STRING = &quot;Simple 2D Point&quot;
-END TYPE
-
-DIM p AS Point2D
-
-msgBox p.description
-</code></pre>
-<p>The example will show <em>&quot;Simple 2D Point&quot;</em> message, because the <em>p</em> variable has the member <em>description</em> initialized in <em>type / end type</em> block.</p>
 
                     </main>
 
@@ -207,7 +169,7 @@ msgBox p.description
                         
 
                         
-                            <a rel="next" href="chapter_01-02-00-memory-representation.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="chapter_01-01-01-simple-elements.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -225,7 +187,7 @@ msgBox p.description
                 
 
                 
-                    <a href="chapter_01-02-00-memory-representation.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a href="chapter_01-01-01-simple-elements.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 
@@ -235,6 +197,14 @@ msgBox p.description
 
         
 
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
         
 
         

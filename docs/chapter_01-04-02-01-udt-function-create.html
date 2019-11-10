@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Adding functions to UDT - thinBasic: user defined types</title>
+        <title>_create - thinBasic: user defined types</title>
         
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div id="sidebar-scrollbox" class="sidebar-scrollbox">
-                <ol class="chapter"><li class="expanded "><a href="chapter_01-00-used-defined-types.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="expanded "><a href="chapter_01-01-elements.html"><strong aria-hidden="true">2.</strong> Elements</a></li><li><ol class="section"><li class="expanded "><a href="chapter_01-01-01-simple-elements.html"><strong aria-hidden="true">2.1.</strong> Simple elements</a></li><li class="expanded "><a href="chapter_01-01-01-fixed-array-elements.html"><strong aria-hidden="true">2.2.</strong> Fixed array elements</a></li><li class="expanded "><a href="chapter_01-01-01-dynamic-array-elements.html"><strong aria-hidden="true">2.3.</strong> Dynamic array elements</a></li><li class="expanded "><a href="chapter_01-01-01-static-elements.html"><strong aria-hidden="true">2.4.</strong> Static elements</a></li></ol></li><li class="expanded "><a href="chapter_01-02-00-memory-representation.html"><strong aria-hidden="true">3.</strong> Memory representation</a></li><li><ol class="section"><li class="expanded "><a href="chapter_01-02-01-size.html"><strong aria-hidden="true">3.1.</strong> Size</a></li><li class="expanded "><a href="chapter_01-02-02-element-offset.html"><strong aria-hidden="true">3.2.</strong> Element offset</a></li><li class="expanded "><a href="chapter_01-02-03-element-alignment.html"><strong aria-hidden="true">3.3.</strong> Element alignment</a></li></ol></li><li class="expanded "><a href="chapter_01-03-00-extending-existing-UDT.html"><strong aria-hidden="true">4.</strong> Extending existing UDT</a></li><li><ol class="section"><li class="expanded "><a href="chapter_01-03-01-extension.html"><strong aria-hidden="true">4.1.</strong> Extension</a></li><li class="expanded "><a href="chapter_01-03-02-inclusion.html"><strong aria-hidden="true">4.2.</strong> Inclusion</a></li></ol></li><li class="expanded "><a href="chapter_01-04-02-udt-function.html" class="active"><strong aria-hidden="true">5.</strong> Adding functions to UDT</a></li><li><ol class="section"><li class="expanded "><a href="chapter_01-04-02-01-udt-function-create.html"><strong aria-hidden="true">5.1.</strong> _create</a></li><li class="expanded "><a href="chapter_01-04-02-02-udt-function-destroy.html"><strong aria-hidden="true">5.2.</strong> _destroy</a></li></ol></li><li class="expanded "><a href="chapter_01-04-01-passing-to-function.html"><strong aria-hidden="true">6.</strong> Passing UDT to function</a></li><li class="expanded "><a href="appendix.html"><strong aria-hidden="true">7.</strong> Appendix</a></li><li><ol class="section"><li class="expanded "><a href="appendix-udts-and-other-languages.html"><strong aria-hidden="true">7.1.</strong> UDTs and other languages</a></li><li><ol class="section"><li class="expanded "><a href="appendix-comparative-data-types.html"><strong aria-hidden="true">7.1.1.</strong> Comparative data types</a></li><li class="expanded "><a href="appendix-impact-of-inheritance.html"><strong aria-hidden="true">7.1.2.</strong> Impact of inheritance</a></li></ol></li><li class="expanded "><a href="appendix-list-of-known-issues.html"><strong aria-hidden="true">7.2.</strong> List of known issues</a></li></ol></li></ol>
+                <ol class="chapter"><li class="expanded "><a href="chapter_01-00-used-defined-types.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="expanded "><a href="chapter_01-01-elements.html"><strong aria-hidden="true">2.</strong> Elements</a></li><li><ol class="section"><li class="expanded "><a href="chapter_01-01-01-simple-elements.html"><strong aria-hidden="true">2.1.</strong> Simple elements</a></li><li class="expanded "><a href="chapter_01-01-01-fixed-array-elements.html"><strong aria-hidden="true">2.2.</strong> Fixed array elements</a></li><li class="expanded "><a href="chapter_01-01-01-dynamic-array-elements.html"><strong aria-hidden="true">2.3.</strong> Dynamic array elements</a></li><li class="expanded "><a href="chapter_01-01-01-static-elements.html"><strong aria-hidden="true">2.4.</strong> Static elements</a></li></ol></li><li class="expanded "><a href="chapter_01-02-00-memory-representation.html"><strong aria-hidden="true">3.</strong> Memory representation</a></li><li><ol class="section"><li class="expanded "><a href="chapter_01-02-01-size.html"><strong aria-hidden="true">3.1.</strong> Size</a></li><li class="expanded "><a href="chapter_01-02-02-element-offset.html"><strong aria-hidden="true">3.2.</strong> Element offset</a></li><li class="expanded "><a href="chapter_01-02-03-element-alignment.html"><strong aria-hidden="true">3.3.</strong> Element alignment</a></li></ol></li><li class="expanded "><a href="chapter_01-03-00-extending-existing-UDT.html"><strong aria-hidden="true">4.</strong> Extending existing UDT</a></li><li><ol class="section"><li class="expanded "><a href="chapter_01-03-01-extension.html"><strong aria-hidden="true">4.1.</strong> Extension</a></li><li class="expanded "><a href="chapter_01-03-02-inclusion.html"><strong aria-hidden="true">4.2.</strong> Inclusion</a></li></ol></li><li class="expanded "><a href="chapter_01-04-02-udt-function.html"><strong aria-hidden="true">5.</strong> Adding functions to UDT</a></li><li><ol class="section"><li class="expanded "><a href="chapter_01-04-02-01-udt-function-create.html" class="active"><strong aria-hidden="true">5.1.</strong> _create</a></li><li class="expanded "><a href="chapter_01-04-02-02-udt-function-destroy.html"><strong aria-hidden="true">5.2.</strong> _destroy</a></li></ol></li><li class="expanded "><a href="chapter_01-04-01-passing-to-function.html"><strong aria-hidden="true">6.</strong> Passing UDT to function</a></li><li class="expanded "><a href="appendix.html"><strong aria-hidden="true">7.</strong> Appendix</a></li><li><ol class="section"><li class="expanded "><a href="appendix-udts-and-other-languages.html"><strong aria-hidden="true">7.1.</strong> UDTs and other languages</a></li><li><ol class="section"><li class="expanded "><a href="appendix-comparative-data-types.html"><strong aria-hidden="true">7.1.1.</strong> Comparative data types</a></li><li class="expanded "><a href="appendix-impact-of-inheritance.html"><strong aria-hidden="true">7.1.2.</strong> Impact of inheritance</a></li></ol></li><li class="expanded "><a href="appendix-list-of-known-issues.html"><strong aria-hidden="true">7.2.</strong> List of known issues</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -148,91 +148,80 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#adding-functions-to-udt" id="adding-functions-to-udt">Adding functions to UDT</a></h1>
-<p>You can enhance the UDT with functions as well - this approach is appropriate anytime you need to perform the data manipulation of the UDT itself.</p>
-<p>Imagine our <code>Point2D</code> example - you will most probably need to initialize <code>x</code> and <code>y</code> straight away, and you will most probably need to be able to get string representation of the variable.</p>
-<p>Let's use this example to demonstrate the use of UDT functions.</p>
-<p>The first fact you should know is that UDT functions do not take the UDT variable as input explicitly.</p>
-<p>The data is always reachable via pre-defined <code>ME</code> variable, accessible in each UDT function.</p>
-<p>There are two kinds of UDT functions:</p>
+                        <h3><a class="header" href="#_create" id="_create">_create</a></h3>
+<p>The optional <code>_create</code> function can be used for variable initialization.</p>
+<p>The behaviour slightly differs depending on whether the function has parameters or not.</p>
+<blockquote>
+<p><strong>Note:</strong> This function <em>cannot</em> be called explicitly by name, it is used automatically.</p>
+</blockquote>
+<h4><a class="header" href="#without-parameters" id="without-parameters">Without parameters</a></h4>
+<p>The simplest form of <code>_create</code> does not take any parameters.</p>
+<p>Such function is called automatically in case of:</p>
 <ul>
-<li>user defined functions</li>
-<li>functions with special meaning, currently <code>_create</code> and <code>_destroy</code></li>
+<li>declaration of a scalar variable of a given type</li>
 </ul>
-<h2><a class="header" href="#user-defined-function-within-type-definition" id="user-defined-function-within-type-definition">User defined function within TYPE definition</a></h2>
-<p>You can define a function directly inside the <em>type / end type</em> block.</p>
-<p>The same rules apply as for any other function, except the advantage of having <code>ME</code> as a way to reference UDT elements.</p>
+<p>The typical use of <code>_create</code> without parameters is an assignment of the default element values:</p>
+<pre><code class="language-thinbasic">TYPE PacMan
+    R AS BYTE
+    G AS BYTE
+    B AS BYTE
+
+    ' As we all now, PacMan is yellow by default :P
+    FUNCTION _create()
+        me.R = 255
+        me.G = 255
+        me.B = 0
+    END FUNCTION
+END TYPE
+
+DIM player1 AS PacMan   ' player1 is yellow by default
+
+DIM player2 AS PacMan   ' player2 is created yellow by default
+player2.R = 0           ' ...but changed to green thanks to override below
+player2.G = 255
+player2.B = 0
+</code></pre>
+<blockquote>
+<p><strong>Note:</strong> Should you create an array of given type, <code>_create</code> is not called at the moment.</p>
+</blockquote>
+<h4><a class="header" href="#with-parameters" id="with-parameters">With parameters</a></h4>
+<p>The advanced form of <code>_create</code> allows us advanced initialization.</p>
+<p>For our case of <code>Point2D</code> it allows us to set <code>x</code> and <code>y</code> during the variable creation.</p>
 <pre><code class="language-thinbasic">TYPE Point2D
   x AS SINGLE
   y AS SINGLE
   
-  FUNCTION setXY(x AS SINGLE, y AS SINGLE)
+  FUNCTION _create(x AS SINGLE, y AS SINGLE)
     ME.x = x
     ME.y = y
   END FUNCTION
-  
-  FUNCTION toString() AS STRING
-    RETURN strFormat$(&quot;[{1}, {2}]&quot;, ME.x, ME.y)
-  END FUNCTION
 END TYPE
 
-DIM point AS Point2D
-
-point.setXY(1, 2)
-msgBox point.toString()
+DIM point AS Point2D(1, 2)
 </code></pre>
-<p>The main advantage of this type of definition is that the <em>type / end type</em> contains everything the UDT can do.</p>
-<h2><a class="header" href="#user-defined-function-outside-type-definition" id="user-defined-function-outside-type-definition">User defined function outside TYPE definition</a></h2>
-<p>You can define the function body outside the <em>type / end type</em> block as well.</p>
-<p>In such a case, please register the function via <code>&lt;functionName&gt; AS FUNCTION</code> within the <em>type / end type</em> first. This registration does not increase the memory footprint of the UDT, but it creates a logical link between UDT and function.</p>
-<p>UDT function defined outside the <em>type / end type</em> block follows the same rules as any other function, except:</p>
-<ul>
-<li>having <code>ME</code> as a way to reference UDT elements</li>
-<li>need to prefix the function name with name of type and dot</li>
-</ul>
-<pre><code class="language-thinbasic">TYPE Point2D
-  x AS SINGLE
-  y AS SINGLE
-
-  setXY    AS FUNCTION
-  toString AS FUNCTION  
-END TYPE
-
-FUNCTION Point2D.setXY(x AS SINGLE, y AS SINGLE)
-  ME.x = x
-  ME.y = y
-END FUNCTION
-
-FUNCTION Point2D.toString() AS STRING
-  RETURN strFormat$(&quot;[{1}, {2}]&quot;, ME.x, ME.y)
-END FUNCTION
-
-DIM point AS Point2D
-
-point.setXY(1, 2)
-msgBox point.toString()
+<p>Now <code>x</code> contains <code>1</code> and <code>y</code> is equal to <code>2</code>.</p>
+<p>As you can see, the <code>_create</code> function is not explicitly called, but any parameters passed to your UDT upon creation are passed to <code>_create</code> automatically.</p>
+<p>Without <code>_create</code>, you would need to initialize the variable the hard way:</p>
+<pre><code>DIM point AS Point2D
+point.x = 1
+point.y = 2
 </code></pre>
-<p>The main advantage of this type of definition is that you can spread the function across multiple source code files.</p>
-<h2><a class="header" href="#functions-with-special-purpose" id="functions-with-special-purpose">Functions with special purpose</a></h2>
-<p>ThinBASIC reserves the functions starting with underscore for special purpose.</p>
-<p>There are currently two such functions provided:</p>
-<ul>
-<li><a href="./chapter_01-04-02-01-udt-function-create.html">_create</a></li>
-<li><a href="./chapter_01-04-02-02-udt-function-destroy.html">_destroy</a></li>
-</ul>
+<blockquote>
+<p><strong>Note:</strong> It is still possible to declare <code>Point2D</code> as <code>DIM point AS Point2D</code>, without any parameters. In such a case <code>_create</code> is not called and <code>x</code> and <code>y</code> will both have a value of zero.</p>
+</blockquote>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="chapter_01-03-02-inclusion.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="chapter_01-04-02-udt-function.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
                         
-                            <a rel="next" href="chapter_01-04-02-01-udt-function-create.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="chapter_01-04-02-02-udt-function-destroy.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -244,13 +233,13 @@ msgBox point.toString()
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a href="chapter_01-03-02-inclusion.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a href="chapter_01-04-02-udt-function.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
                 
-                    <a href="chapter_01-04-02-01-udt-function-create.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a href="chapter_01-04-02-02-udt-function-destroy.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 
