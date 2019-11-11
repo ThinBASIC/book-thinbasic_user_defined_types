@@ -150,13 +150,19 @@
                     <main>
                         <h3><a class="header" href="#element-alignment" id="element-alignment">Element alignment</a></h3>
 <p>By default, the elements are tightly aligned in memory, one after each other.</p>
-<p>You can alter this behaviour by specifying the <em>alignment modifier</em>. It can take 3 different values:</p>
+<blockquote>
+<p>This approach is memory efficient, yet in some cases, you need an alternative:</p>
 <ul>
-<li><em>byte</em>, for 1 byte alignment</li>
+<li>when in need of optimizing UDT element access speed from low-level code</li>
+<li>for compatibility with another language</li>
+</ul>
+</blockquote>
+<p>You can control the alignment via the <em>alignment modifier</em>. It can take 3 different values:</p>
+<ul>
+<li><em>byte</em>, for 1 byte alignment (default)</li>
 <li><em>word</em>, for 2 byte alignment</li>
 <li><em>dword</em>, for 4 byte alignment</li>
 </ul>
-<p>The default alignment is on <em>byte</em> level, so you don't really need to specify it.</p>
 <p>In case you want to elements aligned to 4 byte steps, you might consider using <code>DWORD</code> modifier.</p>
 <p>Let's have a look at this example:</p>
 <pre><code class="language-thinbasic">TYPE RGBColor

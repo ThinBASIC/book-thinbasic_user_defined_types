@@ -2,12 +2,14 @@
 
 By default, the elements are tightly aligned in memory, one after each other.
 
-You can alter this behaviour by specifying the *alignment modifier*. It can take 3 different values:
-- *byte*, for 1 byte alignment
+> This approach is memory efficient, yet in some cases, you need an alternative:
+> - when in need of optimizing UDT element access speed from low-level code
+> - for compatibility with another language
+
+You can control the alignment via the *alignment modifier*. It can take 3 different values:
+- *byte*, for 1 byte alignment (default)
 - *word*, for 2 byte alignment
 - *dword*, for 4 byte alignment
-
-The default alignment is on *byte* level, so you don't really need to specify it.
 
 In case you want to elements aligned to 4 byte steps, you might consider using `DWORD` modifier.
 
