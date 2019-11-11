@@ -7,8 +7,59 @@ This useful command for swapping variable content is silently accepting UDT vari
 
 > **DANGER:** - missing functionality silently ignored, [reported](https://www.thinbasic.com/community/project.php?issueid=564)
 
+There is a **workaround**, which allows you to achieve the desired effect:
+```thinbasic
+TYPE Point2D
+  x AS SINGLE
+  y AS SINGLE
+END TYPE
+
+DIM a AS Point2D
+a.x = 1
+
+DIM b AS Point2D
+b.x = 2
+
+MSGBOX 0, "a: x=" + a.x + ", y=" + a.y + $CRLF + 
+          "b: x=" + b.x + ", y=" + b.y, %MB_OK, "Before swap"
+
+' SWAP a, b ' DOES NOT work at the moment
+MEMORY_SWAP(varptr(a), varptr(b), sizeof(Point2D))
+
+MSGBOX 0, "a: x=" + a.x + ", y=" + a.y + $CRLF + 
+          "b: x=" + b.x + ", y=" + b.y, %MB_OK, "After swap"
+```
+
+Also, SWAP will trigger a confusing message when used on UDT elements directly, [reported](https://www.thinbasic.com/community/project.php?issueid=579)
+
+Again, there is a **workaround** to get around this limitation:
+```thinbasic
+TYPE Point2D
+  x AS SINGLE
+  y AS SINGLE
+END TYPE
+
+DIM a AS Point2D
+a.x = 1
+a.y = 100
+
+DIM b AS Point2D
+b.x = 2
+b.y = 200
+
+MSGBOX 0, "a: x=" + a.x + ", y=" + a.y + $CRLF + 
+          "b: x=" + b.x + ", y=" + b.y, %MB_OK, "Before swap"
+
+'SWAP a.y, b.y ' DOES NOT work at the moment
+MEMORY_SWAP(varptr(a.y), varptr(b.y), sizeof(a.y))
+
+MSGBOX 0, "a: x=" + a.x + ", y=" + a.y + $CRLF + 
+          "b: x=" + b.x + ", y=" + b.y, %MB_OK, "After swap"
+
+```
+
 ## Direct assignment
-While this is not an issue, it is good to know about how does this work.
+While this is not an issue, it is good to know about how this works.
 
 When you perform the assignment of one UDT variable to another UDT variable, a copy of data is performed.
 

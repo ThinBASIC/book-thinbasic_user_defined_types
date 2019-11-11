@@ -155,8 +155,54 @@
 <blockquote>
 <p><strong>DANGER:</strong> - missing functionality silently ignored, <a href="https://www.thinbasic.com/community/project.php?issueid=564">reported</a></p>
 </blockquote>
+<p>There is a <strong>workaround</strong>, which allows you to achieve the desired effect:</p>
+<pre><code class="language-thinbasic">TYPE Point2D
+  x AS SINGLE
+  y AS SINGLE
+END TYPE
+
+DIM a AS Point2D
+a.x = 1
+
+DIM b AS Point2D
+b.x = 2
+
+MSGBOX 0, &quot;a: x=&quot; + a.x + &quot;, y=&quot; + a.y + $CRLF + 
+          &quot;b: x=&quot; + b.x + &quot;, y=&quot; + b.y, %MB_OK, &quot;Before swap&quot;
+
+' SWAP a, b ' DOES NOT work at the moment
+MEMORY_SWAP(varptr(a), varptr(b), sizeof(Point2D))
+
+MSGBOX 0, &quot;a: x=&quot; + a.x + &quot;, y=&quot; + a.y + $CRLF + 
+          &quot;b: x=&quot; + b.x + &quot;, y=&quot; + b.y, %MB_OK, &quot;After swap&quot;
+</code></pre>
+<p>Also, SWAP will trigger a confusing message when used on UDT elements directly, <a href="https://www.thinbasic.com/community/project.php?issueid=579">reported</a></p>
+<p>Again, there is a <strong>workaround</strong> to get around this limitation:</p>
+<pre><code class="language-thinbasic">TYPE Point2D
+  x AS SINGLE
+  y AS SINGLE
+END TYPE
+
+DIM a AS Point2D
+a.x = 1
+a.y = 100
+
+DIM b AS Point2D
+b.x = 2
+b.y = 200
+
+MSGBOX 0, &quot;a: x=&quot; + a.x + &quot;, y=&quot; + a.y + $CRLF + 
+          &quot;b: x=&quot; + b.x + &quot;, y=&quot; + b.y, %MB_OK, &quot;Before swap&quot;
+
+'SWAP a.y, b.y ' DOES NOT work at the moment
+MEMORY_SWAP(varptr(a.y), varptr(b.y), sizeof(a.y))
+
+MSGBOX 0, &quot;a: x=&quot; + a.x + &quot;, y=&quot; + a.y + $CRLF + 
+          &quot;b: x=&quot; + b.x + &quot;, y=&quot; + b.y, %MB_OK, &quot;After swap&quot;
+
+</code></pre>
 <h2><a class="header" href="#direct-assignment" id="direct-assignment">Direct assignment</a></h2>
-<p>While this is not an issue, it is good to know about how does this work.</p>
+<p>While this is not an issue, it is good to know about how this works.</p>
 <p>When you perform the assignment of one UDT variable to another UDT variable, a copy of data is performed.</p>
 <pre><code class="language-thinbasic">TYPE Point2D
   x AS SINGLE
