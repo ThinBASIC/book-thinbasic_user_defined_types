@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>thinBasic: user defined types</title>
+        <title>ff</title>
         
         <meta name="robots" content="noindex" />
         
@@ -115,7 +115,7 @@
                             
                         </div>
 
-                        <h1 class="menu-title">thinBasic: user defined types</h1>
+                        <h1 class="menu-title">ff</h1>
 
                         <div class="right-buttons">
                             <a href="print.html" title="Print this book" aria-label="Print this book">
@@ -232,14 +232,20 @@ cs.character(1, 1) = &quot;a&quot;
 </code></pre>
 <h2><a class="header" href="#dynamic-array-elements" id="dynamic-array-elements">Dynamic array elements</a></h2>
 <p>There is one single exception when UDT array does not have to be dimensioned at all. We call such arrays <em>dynamic</em> and their usage is strictly restricted to use in conjunction with <a href="chapter_01-04-02-udt-function.html">UDT functions</a>, which can (re)dimension them before first use.</p>
-<pre><code>TYPE Polygon
-  point() AS Point2D
+<pre><code>TYPE Person
+  firstName      AS STRING
+  secondName     AS STRING
+
+  luckyNumbers() AS LONG
 
   ...
 
 END TYPE
 </code></pre>
 <p>Dynamic array element has then just empty brackets specified, to distinguish it from a simple element.</p>
+<blockquote>
+<p><strong>Limitation:</strong> You cannot create dynamic arrays of UDTs at the moment, only elemental numeric and string types can be used</p>
+</blockquote>
 <h2><a class="header" href="#static-elements" id="static-elements">Static elements</a></h2>
 <p>An element can be optionally marked as <strong>static</strong>. This means, that this field is <em>shared</em> between all the variables of a given type.</p>
 <pre><code class="language-thinbasic">TYPE Point2D
@@ -671,13 +677,13 @@ END TYPE
 <p>...as the following in Rust:</p>
 <pre><pre class="playpen"><code class="language-rust">
 <span class="boring">#![allow(unused_variables)]
-fn main() {
+</span><span class="boring">fn main() {
 </span>struct Point2D {
   pub x: f32,
   pub y: f32,
 }
 <span class="boring">}
-</code></pre></pre>
+</span></code></pre></pre>
 <h3><a class="header" href="#impact-of-inheritance" id="impact-of-inheritance">Impact of inheritance</a></h3>
 <p>You need to keep in mind that many low level languages do not offer UDT inheritance equivalent.</p>
 <p>In such case, you need to &quot;flatten&quot; the UDT to its final form:</p>
@@ -701,14 +707,14 @@ END TYPE
 <p>...as the following in Rust:</p>
 <pre><pre class="playpen"><code class="language-rust">
 <span class="boring">#![allow(unused_variables)]
-fn main() {
+</span><span class="boring">fn main() {
 </span>struct Point2D {
   pub x: f32,
   pub y: f32,
   pub z: f32,
 }
 <span class="boring">}
-</code></pre></pre>
+</span></code></pre></pre>
 <h1><a class="header" href="#list-of-known-issues" id="list-of-known-issues">List of known issues</a></h1>
 <p>As thinBASIC formal checking is currently under careful research, it might be useful for you to know about the current limitations of the language, which might otherwise confuse you.</p>
 <h2><a class="header" href="#swap" id="swap">SWAP</a></h2>
