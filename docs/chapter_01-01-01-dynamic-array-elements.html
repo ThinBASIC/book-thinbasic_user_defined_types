@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Dynamic array elements - thinBasic: user defined types</title>
+        <title>Dynamic array elements - ff</title>
         
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -113,7 +113,7 @@
                             
                         </div>
 
-                        <h1 class="menu-title">thinBasic: user defined types</h1>
+                        <h1 class="menu-title">ff</h1>
 
                         <div class="right-buttons">
                             <a href="print.html" title="Print this book" aria-label="Print this book">
@@ -150,14 +150,20 @@
                     <main>
                         <h2><a class="header" href="#dynamic-array-elements" id="dynamic-array-elements">Dynamic array elements</a></h2>
 <p>There is one single exception when UDT array does not have to be dimensioned at all. We call such arrays <em>dynamic</em> and their usage is strictly restricted to use in conjunction with <a href="chapter_01-04-02-udt-function.html">UDT functions</a>, which can (re)dimension them before first use.</p>
-<pre><code>TYPE Polygon
-  point() AS Point2D
+<pre><code>TYPE Person
+  firstName      AS STRING
+  secondName     AS STRING
+
+  luckyNumbers() AS LONG
 
   ...
 
 END TYPE
 </code></pre>
 <p>Dynamic array element has then just empty brackets specified, to distinguish it from a simple element.</p>
+<blockquote>
+<p><strong>Limitation:</strong> You cannot create dynamic arrays of UDTs at the moment, only elemental numeric and string types can be used</p>
+</blockquote>
 
                     </main>
 
