@@ -3,24 +3,38 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>_destroy - ff</title>
+        <title>_destroy - thinBasic: user defined types</title>
         
+        
+
+
+        <!-- Custom HTML head -->
+        
+
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
+        
+        <link rel="icon" href="favicon.svg">
+        
+        
         <link rel="shortcut icon" href="favicon.png">
+        
         <link rel="stylesheet" href="css/variables.css">
         <link rel="stylesheet" href="css/general.css">
         <link rel="stylesheet" href="css/chrome.css">
+        
         <link rel="stylesheet" href="css/print.css" media="print">
+        
 
         <!-- Fonts -->
         <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
-        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
 
         <!-- Highlight.js Stylesheets -->
         <link rel="stylesheet" href="highlight.css">
@@ -36,7 +50,7 @@
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
             var path_to_root = "";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -80,8 +94,8 @@
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <div id="sidebar-scrollbox" class="sidebar-scrollbox">
-                <ol class="chapter"><li class="expanded "><a href="chapter_01-00-used-defined-types.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="expanded "><a href="chapter_01-01-elements.html"><strong aria-hidden="true">2.</strong> Elements</a></li><li><ol class="section"><li class="expanded "><a href="chapter_01-01-01-simple-elements.html"><strong aria-hidden="true">2.1.</strong> Simple elements</a></li><li class="expanded "><a href="chapter_01-01-01-fixed-array-elements.html"><strong aria-hidden="true">2.2.</strong> Fixed array elements</a></li><li class="expanded "><a href="chapter_01-01-01-dynamic-array-elements.html"><strong aria-hidden="true">2.3.</strong> Dynamic array elements</a></li><li class="expanded "><a href="chapter_01-01-01-static-elements.html"><strong aria-hidden="true">2.4.</strong> Static elements</a></li></ol></li><li class="expanded "><a href="chapter_01-02-00-memory-representation.html"><strong aria-hidden="true">3.</strong> Memory representation</a></li><li><ol class="section"><li class="expanded "><a href="chapter_01-02-01-size.html"><strong aria-hidden="true">3.1.</strong> Size</a></li><li class="expanded "><a href="chapter_01-02-02-element-offset.html"><strong aria-hidden="true">3.2.</strong> Element offset</a></li><li class="expanded "><a href="chapter_01-02-03-element-alignment.html"><strong aria-hidden="true">3.3.</strong> Element alignment</a></li></ol></li><li class="expanded "><a href="chapter_01-03-00-extending-existing-UDT.html"><strong aria-hidden="true">4.</strong> Extending existing UDT</a></li><li><ol class="section"><li class="expanded "><a href="chapter_01-03-01-extension.html"><strong aria-hidden="true">4.1.</strong> Extension</a></li><li class="expanded "><a href="chapter_01-03-02-inclusion.html"><strong aria-hidden="true">4.2.</strong> Inclusion</a></li></ol></li><li class="expanded "><a href="chapter_01-04-02-udt-function.html"><strong aria-hidden="true">5.</strong> Adding functions to UDT</a></li><li><ol class="section"><li class="expanded "><a href="chapter_01-04-02-01-udt-function-create.html"><strong aria-hidden="true">5.1.</strong> _create</a></li><li class="expanded "><a href="chapter_01-04-02-02-udt-function-destroy.html" class="active"><strong aria-hidden="true">5.2.</strong> _destroy</a></li></ol></li><li class="expanded "><a href="chapter_01-04-01-passing-to-function.html"><strong aria-hidden="true">6.</strong> Passing UDT to function</a></li><li class="expanded "><a href="appendix.html"><strong aria-hidden="true">7.</strong> Appendix</a></li><li><ol class="section"><li class="expanded "><a href="appendix-udts-and-other-languages.html"><strong aria-hidden="true">7.1.</strong> UDTs and other languages</a></li><li><ol class="section"><li class="expanded "><a href="appendix-comparative-data-types.html"><strong aria-hidden="true">7.1.1.</strong> Comparative data types</a></li><li class="expanded "><a href="appendix-impact-of-inheritance.html"><strong aria-hidden="true">7.1.2.</strong> Impact of inheritance</a></li></ol></li><li class="expanded "><a href="appendix-list-of-known-issues.html"><strong aria-hidden="true">7.2.</strong> List of known issues</a></li></ol></li></ol>
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="chapter_01-00-used-defined-types.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="chapter_01-01-elements.html"><strong aria-hidden="true">2.</strong> Elements</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="chapter_01-01-01-simple-elements.html"><strong aria-hidden="true">2.1.</strong> Simple elements</a></li><li class="chapter-item expanded "><a href="chapter_01-01-01-fixed-array-elements.html"><strong aria-hidden="true">2.2.</strong> Fixed array elements</a></li><li class="chapter-item expanded "><a href="chapter_01-01-01-dynamic-array-elements.html"><strong aria-hidden="true">2.3.</strong> Dynamic array elements</a></li><li class="chapter-item expanded "><a href="chapter_01-01-01-static-elements.html"><strong aria-hidden="true">2.4.</strong> Static elements</a></li></ol></li><li class="chapter-item expanded "><a href="chapter_01-02-00-memory-representation.html"><strong aria-hidden="true">3.</strong> Memory representation</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="chapter_01-02-01-size.html"><strong aria-hidden="true">3.1.</strong> Size</a></li><li class="chapter-item expanded "><a href="chapter_01-02-02-element-offset.html"><strong aria-hidden="true">3.2.</strong> Element offset</a></li><li class="chapter-item expanded "><a href="chapter_01-02-03-element-alignment.html"><strong aria-hidden="true">3.3.</strong> Element alignment</a></li></ol></li><li class="chapter-item expanded "><a href="chapter_01-03-00-extending-existing-UDT.html"><strong aria-hidden="true">4.</strong> Extending existing UDT</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="chapter_01-03-01-extension.html"><strong aria-hidden="true">4.1.</strong> Extension</a></li><li class="chapter-item expanded "><a href="chapter_01-03-02-inclusion.html"><strong aria-hidden="true">4.2.</strong> Inclusion</a></li></ol></li><li class="chapter-item expanded "><a href="chapter_01-04-02-udt-function.html"><strong aria-hidden="true">5.</strong> Adding functions to UDT</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="chapter_01-04-02-01-udt-function-create.html"><strong aria-hidden="true">5.1.</strong> _create</a></li><li class="chapter-item expanded "><a href="chapter_01-04-02-02-udt-function-destroy.html" class="active"><strong aria-hidden="true">5.2.</strong> _destroy</a></li></ol></li><li class="chapter-item expanded "><a href="chapter_01-04-01-passing-to-function.html"><strong aria-hidden="true">6.</strong> Passing UDT to function</a></li><li class="chapter-item expanded "><a href="appendix.html"><strong aria-hidden="true">7.</strong> Appendix</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="appendix-udts-and-other-languages.html"><strong aria-hidden="true">7.1.</strong> UDTs and other languages</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="appendix-comparative-data-types.html"><strong aria-hidden="true">7.1.1.</strong> Comparative data types</a></li><li class="chapter-item expanded "><a href="appendix-impact-of-inheritance.html"><strong aria-hidden="true">7.1.2.</strong> Impact of inheritance</a></li></ol></li><li class="chapter-item expanded "><a href="appendix-list-of-known-issues.html"><strong aria-hidden="true">7.2.</strong> List of known issues</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -90,37 +104,38 @@
 
             <div class="page">
                 
-                <div id="menu-bar" class="menu-bar">
-                    <div id="menu-bar-sticky-container">
-                        <div class="left-buttons">
-                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                                <i class="fa fa-bars"></i>
-                            </button>
-                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                                <i class="fa fa-paint-brush"></i>
-                            </button>
-                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
-                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
-                            </ul>
-                            
-                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
-                                <i class="fa fa-search"></i>
-                            </button>
-                            
-                        </div>
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
 
-                        <h1 class="menu-title">ff</h1>
+                    <h1 class="menu-title">thinBasic: user defined types</h1>
 
-                        <div class="right-buttons">
-                            <a href="print.html" title="Print this book" aria-label="Print this book">
-                                <i id="print-button" class="fa fa-print"></i>
-                            </a>
-                            
-                        </div>
+                    <div class="right-buttons">
+                        
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
                     </div>
                 </div>
 
@@ -204,13 +219,13 @@ END FUNCTION
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a href="chapter_01-04-02-01-udt-function-create.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="chapter_01-04-02-01-udt-function-create.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
                 
-                    <a href="chapter_01-04-01-passing-to-function.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="chapter_01-04-01-passing-to-function.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 
@@ -223,10 +238,10 @@ END FUNCTION
         
 
         
-        
+
         
         <script type="text/javascript">
-            window.playpen_copyable = true;
+            window.playground_copyable = true;
         </script>
         
 
